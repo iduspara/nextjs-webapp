@@ -20,7 +20,7 @@ export const getStaticProps = async () => {
   const responseJson = await res.json();
   const contentElements = await responseJson.contentElements;
 
-  return { props: { contentElements }, revalidate: 10 };
+  return { props: { contentElements }, revalidate: 60 };
 };
 
 export default function Page({ contentElements }) {
