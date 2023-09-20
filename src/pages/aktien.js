@@ -12,15 +12,22 @@ export const getStaticProps = async () => {
   headers.append('Authorization', `Basic ${encodedCredentials}`);
   headers.append('Accept', 'application/json');
   headers.append('Content-Type', 'application/json');
+  let contentElements = [];
 
   const res = await fetch(url, {
     method: 'GET',
     headers,
   });
-  const responseJson = await res.json();
-  const contentElements = await responseJson.contentElements;
 
-  return { props: { contentElements }, revalidate: 60 };
+  if (res.ok) {
+    const responseJson = await res.json();
+    contentElements = await responseJson.contentElements;
+    throw new Error('Something went wrong');
+  } else {
+    contentElements = [];
+  }
+
+  return { props: { contentElements }, revalidate: 10 };
 };
 
 export default function Page({ contentElements }) {
