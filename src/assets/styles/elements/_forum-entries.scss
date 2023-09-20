@@ -1,0 +1,25 @@
+.forum-entry {
+  text-align: left;
+  padding: var(--spacing-s) 0;
+
+  @media (min-width: $break-sm) {
+    width: 248px;
+  }
+
+  .content {
+    line-height: var(--line-height-display);
+
+    .entry {
+      font-family: var(--font-family-inter);
+      line-height: var(--line-height-middle);
+
+      & .title {
+        font-family: var(--font-family-charter);
+      }
+    }
+  }
+
+  .question {
+    line-height: var(--line-height-tight);
+  }
+}

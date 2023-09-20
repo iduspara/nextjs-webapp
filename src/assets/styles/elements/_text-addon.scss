@@ -1,0 +1,12 @@
+.text-addon {
+  display: block;
+  color: var(--color-grey);
+  font-family: var(--font-family-inter);
+  font-size: var(--font-size-xxs);
+  line-height: var(--line-height-tight);
+  margin-top: var(--spacing-s);
+
+  p {
+    font-size: inherit;
+  }
+}

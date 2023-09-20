@@ -1,0 +1,24 @@
+.household-calculator {
+  .section-headline {
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-title);
+    font-weight: 700;
+    margin-bottom: var(--spacing-s);
+
+    @media (min-width: $break-sm) {
+      font-size: var(--font-size-m);
+      margin-bottom: var(--spacing-m);
+    }
+  }
+
+  .section-subheadline {
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--spacing-s);
+
+    @media (min-width: $break-sm) {
+      font-size: var(--font-size-s);
+      margin-bottom: var(--spacing-m);
+    }
+  }
+}

@@ -1,0 +1,9 @@
+.provider-list {
+  font-family: var(--font-family-inter);
+  display: flex;
+  flex-direction: column;
+
+  .provider:nth-child(even) {
+    background: var(--color-lightgrey);
+  }
+}

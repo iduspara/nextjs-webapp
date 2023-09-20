@@ -1,0 +1,278 @@
+/* stylelint-disable color-function-notation */
+/* stylelint-disable no-descending-specificity */
+.custom-datalist,
+.custom-select {
+  font-family: var(--font-family-inter);
+  position: relative;
+
+  &:focus-within {
+    .input-wrapper {
+      border-color: var(--color-indigo) !important;
+    }
+
+    .options {
+      border-width: 2px;
+    }
+  }
+
+  &:hover {
+    .options {
+      border-color: var(--color-slate);
+    }
+  }
+
+  &.invalid {
+    &:hover {
+      .input-wrapper {
+        border-color: transparent;
+      }
+    }
+
+    .input-wrapper {
+      border-color: transparent;
+    }
+
+    .error-message {
+      display: block;
+    }
+  }
+
+  /* Outline for focus */
+  .input-wrapper {
+    border: 1px solid var(--color-grey);
+    border-bottom: 0;
+    border-radius: 2px 2px 0 0;
+    transition: border-color var(--animation-duration-l);
+
+    &:hover,
+    &.filled {
+      border-color: var(--color-slate);
+    }
+
+    &.filled {
+      .options {
+        border-color: var(--color-slate);
+      }
+    }
+
+    &.active {
+      /* Point the arrow upwards when the select box is open (active) */
+      .selected {
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+
+      .separator-dropdown {
+        opacity: 1;
+      }
+
+      /* Hide the items when the select box is closed */
+      .options {
+        z-index: var(--z-index-m);
+        max-height: 233px;
+        pointer-events: all;
+        padding-top: var(--spacing-xxxs);
+        padding-bottom: var(--spacing-xxxs);
+      }
+    }
+  }
+
+  /* Style separator */
+  .separator-dropdown {
+    position: absolute;
+    top: 47px;
+    left: var(--spacing-s);
+    right: var(--spacing-s);
+    margin: 0;
+    height: 1px;
+    min-height: 1px;
+    border: none;
+    background-color: var(--color-lightgrey);
+    transition: opacity var(--animation-duration-l);
+    opacity: 0;
+    pointer-events: none;
+
+    &.visible {
+      opacity: 1;
+    }
+  }
+
+  /* Style items (options) */
+  .options {
+    position: absolute;
+    background-color: var(--color-white);
+    top: 49px;
+    left: 0;
+    right: 0;
+    z-index: var(--z-index-s);
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-grey);
+    border-top: none;
+    border-radius: 0;
+    max-height: 1px;
+    pointer-events: none;
+    transition:
+      border-color var(--animation-duration-l),
+      max-height var(--animation-duration-l) ease;
+
+    .option {
+      color: var(--color-slate);
+      font-size: var(--font-size-xs);
+      line-height: var(--line-height-xs);
+      border-color: transparent transparent var(--color-slate) transparent;
+      cursor: pointer;
+      user-select: none;
+      transition:
+        background-color var(--animation-duration-l) ease,
+        color var(--animation-duration-l) ease;
+      padding: var(--spacing-xxs) var(--spacing-s);
+
+      &:hover,
+      &.highlighted {
+        background-color: var(--color-lightgrey);
+      }
+
+      &[disabled="true"] {
+        background-color: var(--color-athensgray);
+
+        &:hover {
+          cursor: not-allowed;
+        }
+      }
+
+      &.active {
+        font-weight: 700;
+      }
+
+      &.disabled {
+        display: none;
+      }
+    }
+  }
+}
+
+.custom-select {
+  font-size: var(--font-size-xs);
+
+  &:focus {
+    outline: none;
+
+    .selected {
+      border-color: var(--color-indigo);
+
+      &:hover {
+        border-color: var(--color-indigo);
+      }
+
+      ~ .options {
+        border-color: var(--color-indigo);
+      }
+    }
+  }
+
+  select {
+    display: none; /* Hide original SELECT element */
+  }
+
+  .selected {
+    cursor: pointer;
+    user-select: none;
+    color: var(--color-slate);
+    overflow: hidden;
+    resize: none;
+    margin-bottom: 0;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-xs) var(--spacing-s);
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-radius: 0;
+    line-height: var(--line-height-xs);
+    transition: border-color var(--animation-duration-l);
+    position: relative;
+
+    &[disabled] {
+      color: var(--color-slate);
+    }
+
+    /* Background gradient */
+    &::before {
+      position: absolute;
+      content: "";
+      background-image:
+        linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0%),
+          rgba(255, 255, 255, 100%) 45%
+        );
+      top: 2px;
+      bottom: 2px;
+      right: 2px;
+      width: 80px;
+    }
+
+    /* Style the arrow inside the select element */
+    &::after {
+      position: absolute;
+      content: "";
+      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M6%209L12%2015L18%209%22%20stroke%3D%22%23243039%22%20stroke-width%3D%221.2%22%20stroke-linecap%3D%22round%22%2F%3E%0A%3C%2Fsvg%3E");
+      background-size: 24px;
+      top: 12px;
+      right: 16px;
+      width: 24px;
+      height: 24px;
+      transition: transform var(--animation-duration-l) ease;
+    }
+  }
+}
+
+.custom-datalist {
+  input[type="text"] {
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xs);
+    width: 100%;
+    height: 49px;
+    padding: var(--spacing-xs) var(--spacing-s);
+    appearance: none;
+    border-width: 1px;
+    border-bottom: none;
+    border-color: transparent;
+    border-radius: 0;
+
+    &:hover {
+      border-color: transparent;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-indigo);
+
+      ~ .options {
+        border-color: var(--color-indigo);
+      }
+    }
+  }
+
+  .input-clear {
+    &::before {
+      top: -11px;
+      right: -14px;
+      width: 72px;
+      height: 48px;
+    }
+  }
+
+  .options {
+    .option {
+      display: none;
+
+      &.visible {
+        display: block;
+      }
+    }
+  }
+}

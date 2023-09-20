@@ -1,0 +1,132 @@
+.affiliate-popup-content {
+  font-family: var(--font-family-inter);
+
+  .upper-content,
+  .lower-content {
+    padding: var(--spacing-m);
+
+    @media (min-width: $break-sm) {
+      padding: var(--spacing-xl);
+    }
+  }
+
+  .headline {
+    font-weight: 700;
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-title);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .lower-content {
+    .headline,
+    p {
+      margin-bottom: var(--spacing-m);
+    }
+  }
+
+  .affiliate-products,
+  .result-item-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-m);
+  }
+
+  .affiliate-products {
+    border-top: 1px solid var(--color-lightgrey);
+    margin-top: var(--spacing-m);
+  }
+
+  .affiliate-product {
+    border-top: 1px solid var(--color-lightgrey);
+    padding-top: var(--spacing-m);
+
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  .result-item-details {
+    background-color: var(--color-highlightgrey);
+    padding: 0 var(--spacing-m);
+
+    @media (min-width: $break-sm) {
+      padding: 0 var(--spacing-xl);
+    }
+
+    .affiliate-product {
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:last-child {
+        padding-bottom: var(--spacing-m);
+
+        @media (min-width: $break-sm) {
+          padding-bottom: var(--spacing-xl);
+        }
+      }
+    }
+  }
+
+  .affiliate-product-name {
+    font-weight: 700;
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-s);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .guide-link {
+    border-bottom: 0;
+    color: var(--color-indigo);
+
+    &:hover {
+      color: var(--color-orange);
+    }
+  }
+
+  .affiliate-product-links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .more-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-xxs);
+    padding: var(--spacing-m);
+    background-color: var(--color-highlightgrey);
+    margin-bottom: 0;
+
+    @media (min-width: $break-sm) {
+      padding: var(--spacing-m) var(--spacing-xl);
+    }
+
+    .more-details-text {
+      color: var(--color-indigo);
+      transition: color var(--animation-duration-l);
+      margin-bottom: 0;
+    }
+
+    .more-details-icon {
+      background-size: 24px;
+      height: 24px;
+      width: 24px;
+      transition: transform var(--animation-duration-l);
+    }
+
+    &.active {
+      .more-details-text {
+        color: var(--color-slate);
+      }
+
+      .more-details-icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

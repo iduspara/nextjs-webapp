@@ -1,0 +1,110 @@
+/* stylelint-disable color-function-notation */
+.react-newsletter-sticky-signupform {
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  background: var(--color-white);
+  box-shadow: 2px -4px 8px 0px rgba(0, 0, 0, 0.25);
+  width: 100%;
+
+  @media(min-width: $break-md) {
+    max-width: 375px;
+    left: 77px;
+  }
+
+  .sticky-form-container {
+    margin: var(--spacing-m);
+    font-family: var(--font-family-inter);
+
+    @media(min-width: $break-sm) {
+      margin: var(--spacing-xl);
+    }
+
+    @media(min-width: $break-md) {
+      margin: var(--spacing-m);
+    }
+
+    .closed {
+      overflow: hidden;
+      height: 0;
+      transition: height, 0.5s linear;
+    }
+
+    .open {
+      transition: height, 0.5s linear;
+    }
+
+    .spire-container {
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      text-align: center;
+      top: -28px;
+      width: 75px;
+
+      @media (min-width: $break-md) {
+        width: 69px;
+      }
+
+      .spire {
+        text-align: center;
+        border-radius: 45px 45px 0 0;
+        background: var(--color-white);
+        box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
+        height: 34px;
+      }
+
+      span {
+        cursor: pointer;
+      }
+    }
+
+
+    .h5 {
+      margin-bottom: var(--spacing-s);
+      display: flex;
+      justify-content: space-between;
+      font-size: var(--font-size-l);
+      line-height: var(--line-height-title);
+      color: var(--color-slate);
+
+      .modal-close {
+        flex-shrink: 0;
+        cursor: pointer;
+        font-size: var(--font-size-l);
+      }
+
+      &.tiny-h5 {
+        font-size: var(--font-size-xxs);
+        line-height: var(--line-height-xxs);
+        margin-bottom: 0;
+        font-weight: 400;
+
+        @media(min-width: $break-sm) {
+          font-size: var(--font-size-xs);
+          line-height: var(--line-height-xs);
+        }
+
+        @media(min-width: $break-md) {
+          font-size: var(--font-size-xxs);
+          line-height: var(--line-height-xxs);
+        }
+      }
+    }
+
+
+    .sticky-text {
+      font-size: var(--font-size-xs);
+      line-height: var(--line-height-tight);
+      color: var(--color-slate);
+
+      input {
+        color: var(--color-slate);
+        border-bottom: 1px solid var(--color-slate);
+        -webkit-text-fill-color: var(--color-slate) !important;
+      }
+    }
+  }
+}

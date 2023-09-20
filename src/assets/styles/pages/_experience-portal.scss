@@ -1,0 +1,117 @@
+.ft-experience-portal {
+  h1,
+  .h1 {
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    line-height: var(--line-height-title);
+    color: var(--color-slate);
+    margin-bottom: var(--spacing-xxs);
+    text-align: left;
+
+    @media (min-width: $break-sm) {
+      font-size: var(--font-size-xl);
+    }
+
+    @media (min-width: $break-md) {
+      font-size: var(--font-size-xxl);
+    }
+  }
+
+  h2,
+  .h2 {
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 700;
+    line-height: var(--line-height-title);
+    color: var(--color-slate);
+    margin-bottom: var(--spacing-xxs);
+    text-align: left;
+  }
+
+  h3,
+  .h3 {
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-display);
+
+    @media (min-width: $break-sm) {
+      font-size: var(--font-size-l);
+    }
+  }
+
+  .tagline {
+    font-weight: normal;
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-tight);
+  }
+
+  .headline {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+.experience-portal-grid-s,
+.experience-portal-grid-m,
+.experience-portal-grid-l {
+  margin: 0 var(--spacing-m);
+  max-width: 100%;
+
+  @media (min-width: $break-sm) {
+    margin: 0 var(--spacing-xl);
+  }
+
+  @media (min-width: $break-md) {
+    margin: 0 auto;
+  }
+}
+
+.experience-portal-grid-s {
+  @media (min-width: $break-sm) {
+    max-width: var(--grid-size-s-tablet);
+    margin: 0 auto;
+  }
+
+  @media (min-width: $break-md) {
+    max-width: var(--grid-size-s);
+  }
+}
+
+.experience-portal-grid-m {
+  @media (min-width: $break-md) {
+    max-width: var(--grid-size-m);
+  }
+}
+
+.experience-portal-grid-l {
+  @media (min-width: $break-md) {
+    max-width: var(--grid-size-l);
+  }
+}
+
+.experience-portal-grid-xs-full {
+  @media (max-width: $break-xs-max) {
+    margin: 0;
+  }
+}
+
+.experience-portal-grid-sm-full {
+  @media (min-width: $break-sm) and (max-width: $break-sm-max) {
+    margin: 0;
+  }
+}
+
+.anbieter-template-default {
+  padding-bottom: 58px;
+
+  @media (min-width: $break-sm) {
+    padding-bottom: 82px;
+  }
+}
+
+.provider-logo {
+  max-height: 50px;
+}
+
+.provider-logo-small {
+  max-height: 40px;
+}

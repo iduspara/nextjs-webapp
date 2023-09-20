@@ -1,0 +1,30 @@
+.affiliate-text {
+  padding: var(--spacing-xl) 0;
+
+  @media (min-width: $break-sm) {
+    padding: var(--spacing-xxxl) 0;
+  }
+  
+  h3 {
+    padding-top: var(--spacing-xxxl);
+    font-size: var(--font-size-m);
+    margin-top: 0;
+
+    @media (min-width: $break-sm) {
+      font-size: var(--font-size-l);
+      margin-bottom: var(--spacing-l);
+    }
+
+    @media (min-width: $break-md) {
+      margin-bottom: var(--spacing-xl);
+    }
+  }
+
+  p {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .header-contentelement-container {
+    margin-top: 0;
+  }
+}

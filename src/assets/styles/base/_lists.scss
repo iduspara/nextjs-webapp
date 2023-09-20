@@ -1,0 +1,135 @@
+/* stylelint-disable function-url-quotes */
+/* stylelint-disable no-descending-specificity */
+.no-list-style {
+  list-style: none;
+  padding-left: 0;
+}
+
+.pros-and-cons-list,
+ul.pro,
+ul.con,
+ul.neutral {
+  li {
+    font-size: var(--font-size-xxs);
+    line-height: var(--line-height-xxs);
+    padding-left: var(--spacing-xs);
+    margin-bottom: var(--spacing-s);
+    display: flex;
+    gap: var(--spacing-xxs);
+
+    @media (min-width: $break-sm) {
+      font-size: var(--font-size-xs);
+      line-height: var(--line-height-xs);
+      margin-bottom: var(--spacing-s);
+    }
+
+    &::before {
+      width: 24px;
+      height: 24px;
+      min-height: 24px;
+      background-size: 24px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .text {
+      flex-shrink: 500;
+    }
+
+    .icon-info {
+      margin-left: 0;
+    }
+  }
+}
+
+.pros-and-cons-list .pro,
+ul.pro li {
+  &::before {
+    @extend .icon-rating-good;
+  }
+}
+
+.pros-and-cons-list .con,
+ul.con li {
+  &::before {
+    @extend .icon-rating-bad;
+  }
+}
+
+.pros-and-cons-list .neutral,
+ul.neutral li {
+  &::before {
+    @extend .icon-rating-neutral;
+  }
+}
+
+ul.pro-marketing-lp {
+  li {
+    font-size: var(--font-size-s);
+    line-height: var(--line-height-s);
+    padding-left: var(--spacing-m);
+    margin-bottom: var(--spacing-m);
+    display: flex;
+    gap: var(--spacing-s);
+
+    @media (--break-sm) {
+      font-size: var(--font-size-xs);
+      line-height: var(--line-height-xs);
+      margin-bottom: var(--spacing-s);
+    }
+
+    &::before {
+      @extend .icon-table-yes;
+
+      filter: url(#orange);
+      margin-top: 3px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    & .text {
+      flex-shrink: 0;
+    }
+
+    & .icon-info {
+      margin-left: 0;
+    }
+  }
+}
+
+ul.pros-and-infos-list {
+  margin: var(--spacing-m) 0 0 0;
+  padding: 0;
+
+  @media (min-width: $break-sm) {
+    margin-top: var(--spacing-xl);
+  }
+
+  li {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-xs);
+    align-items: flex-start;
+    margin: var(--spacing-s) 0 0 0;
+    padding: 0;
+    font-size: var(--font-size-xxs);
+    line-height: var(--line-height-tight);
+
+    &::before {
+      content: unset;
+    }
+
+    .icon {
+      flex-shrink: 0;
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-position: center;
+      background-size: 100%;
+    }
+  }
+}

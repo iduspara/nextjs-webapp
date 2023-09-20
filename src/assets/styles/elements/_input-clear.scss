@@ -1,0 +1,41 @@
+/* stylelint-disable color-function-notation */
+.input-clear {
+  position: absolute;
+  top: 50%;
+  right: var(--spacing-s);
+  transform: translateY(-50%);
+  display: none;
+  width: var(--font-size-l);
+  height: var(--font-size-l);
+
+  /* Background gradient */
+  &::before {
+    position: absolute;
+    content: "";
+    background-image:
+      linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0%),
+        rgba(255, 255, 255, 100%) 45%
+      );
+    top: 0;
+    right: 0;
+    width: var(--font-size-xxl);
+    height: var(--font-size-l);
+    display: block;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .icon-close {
+    display: block;
+  }
+}
+
+.filled {
+  .input-clear {
+    display: block;
+  }
+}

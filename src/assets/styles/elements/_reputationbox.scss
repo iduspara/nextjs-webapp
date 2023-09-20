@@ -1,0 +1,131 @@
+/* stylelint-disable-next-line selector-class-pattern */
+.frame-type-ftcustomcontentelements_reputationbox {
+  padding-top: var(--spacing-xl);
+
+  h3, h4 {
+    margin-top: var(--spacing-xl);
+  }
+
+  & > .container + .container {
+    margin-top: calc(var(--spacing-l) - var(--spacing-xl));
+  }
+
+  @media (min-width: $break-md) {
+    padding-top: var(--spacing-xxxl);
+
+    h3, h4 {
+      margin-top: 0;
+    }
+  }
+
+
+  .reputationbox-mask {
+    display: flex;
+    flex-direction: column;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 calc(0px + 2 * var(--gutter-width)),
+      #000 calc(100% - 2 * var(--gutter-width)),
+      transparent 100%
+    );
+  }
+
+  .reputationbox-images {
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    overflow-x: scroll;
+    scrollbar-width: none;
+    user-select: none;
+    /* stylelint-disable-next-line property-no-unknown */
+    user-drag: none;
+
+    * {
+      user-select: none;
+      /* stylelint-disable-next-line property-no-unknown */
+      user-drag: none;
+    }
+
+    ul {
+      display: flex;
+      padding: 0;
+      gap: var(--spacing-m);
+
+      @media (min-width: $break-sm) {
+        gap: var(--spacing-xxxl);
+      }
+
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        padding: 0 1px;
+      }
+    }
+
+    li {
+      margin: auto;
+      padding: 0;
+      flex-shrink: 0;
+
+      &::before {
+        content: unset;
+      }
+    }
+
+    li * {
+      margin: 0;
+      padding: 0;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+
+    &.trust-elements {
+      ul {
+        @media (min-width: $break-md) {
+          justify-content: center;
+          gap: var(--spacing-xl);
+        }
+      }
+
+      li {
+        max-width: 175px;
+        margin: 0;
+      }
+    }
+
+    .element-headline {
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-s);
+      line-height: var(--line-height-s);
+      font-weight: 700;
+      margin-top: 10px;
+    }
+
+    .element-text {
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xs);
+      line-height: var(--line-height-xs);
+      font-weight: 400;
+    }
+  }
+
+  .headline {
+    font-size: var(--font-size-l);
+    font-family: var(--font-family-inter);
+    line-height: var(--line-height-title);
+    font-weight: 700;
+    margin-bottom: 0;
+    text-align: center;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  .image-sizer {
+    justify-content: center;
+    display: flex;
+  }
+}

@@ -1,0 +1,14 @@
+/* stylelint-disable selector-class-pattern */
+.podcast {
+  margin-bottom: var(--spacing-m);
+
+  @media (min-width: $break-sm) {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .podcast_script {
+    iframe {
+      display: block;
+    }
+  }
+}

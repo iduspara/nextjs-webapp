@@ -1,0 +1,139 @@
+input[type="range"] {
+  appearance: none;
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+  margin: 0; /* Otherwise 2px in Chrome */
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+    border: none;
+    background-color: var(--color-indigo);
+    background-image: url("data:image/svg+xml,%3Csvg%20width%3D%229%22%20height%3D%2214%22%20viewBox%3D%220%200%209%2014%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M8.00002%200.599976C8.22094%200.599976%208.40002%200.779062%208.40002%200.999976L8.40002%2013C8.40002%2013.2209%208.22094%2013.4%208.00002%2013.4C7.77911%2013.4%207.60002%2013.2209%207.60002%2013L7.60002%200.999975C7.60002%200.779062%207.77911%200.599976%208.00002%200.599976Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M4.66669%200.599975C4.88761%200.599975%205.06669%200.779061%205.06669%200.999975L5.06669%2013C5.06669%2013.2209%204.88761%2013.4%204.66669%2013.4C4.44578%2013.4%204.26669%2013.2209%204.26669%2013L4.26669%200.999975C4.26669%200.779061%204.44578%200.599975%204.66669%200.599975Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M1.73336%200.999975C1.73336%200.779061%201.55427%200.599975%201.33336%200.599975C1.11245%200.599975%200.933359%200.779061%200.933359%200.999975L0.933358%2013C0.933358%2013.2209%201.11244%2013.4%201.33336%2013.4C1.55427%2013.4%201.73336%2013.2209%201.73336%2013L1.73336%200.999975Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: background-color var(--animation-duration-l);
+
+    &:hover {
+      background-color: var(--color-orange);
+    }
+  }
+
+  &::-moz-range-thumb {
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+    border: none;
+    background-color: var(--color-indigo);
+    background-image: url("data:image/svg+xml,%3Csvg%20width%3D%229%22%20height%3D%2214%22%20viewBox%3D%220%200%209%2014%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M8.00002%200.599976C8.22094%200.599976%208.40002%200.779062%208.40002%200.999976L8.40002%2013C8.40002%2013.2209%208.22094%2013.4%208.00002%2013.4C7.77911%2013.4%207.60002%2013.2209%207.60002%2013L7.60002%200.999975C7.60002%200.779062%207.77911%200.599976%208.00002%200.599976Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M4.66669%200.599975C4.88761%200.599975%205.06669%200.779061%205.06669%200.999975L5.06669%2013C5.06669%2013.2209%204.88761%2013.4%204.66669%2013.4C4.44578%2013.4%204.26669%2013.2209%204.26669%2013L4.26669%200.999975C4.26669%200.779061%204.44578%200.599975%204.66669%200.599975Z%22%20fill%3D%22white%22%2F%3E%0A%3Cpath%20d%3D%22M1.73336%200.999975C1.73336%200.779061%201.55427%200.599975%201.33336%200.599975C1.11245%200.599975%200.933359%200.779061%200.933359%200.999975L0.933358%2013C0.933358%2013.2209%201.11244%2013.4%201.33336%2013.4C1.55427%2013.4%201.73336%2013.2209%201.73336%2013L1.73336%200.999975Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: background-color var(--animation-duration-l);
+
+    &:hover {
+      background-color: var(--color-orange);
+    }
+  }
+
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background-color: var(--color-lightgrey);
+    border-radius: 40px;
+  }
+
+  &::-moz-range-progress {
+    height: 4px;
+    background-color: var(--color-indigo);
+    border-radius: 40px;
+  }
+
+  &::-moz-range-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background-color: var(--color-lightgrey);
+    border-radius: 40px;
+  }
+}
+
+.range-label {
+  font-weight: normal;
+  margin-left: auto;
+}
+
+.custom-range {
+  position: relative;
+  height: 33px;
+
+  input[type="range"] {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  /* Tooltip */
+  .custom-range-tooltip-container {
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    top: 37px;
+    pointer-events: none;
+
+    .custom-range-tooltip {
+      position: absolute;
+      top: -42px;
+      width: 32px;
+      height: 42px;
+      pointer-events: none;
+    }
+  }
+
+  /* Webkit progress bar */
+  .custom-range-progress {
+    height: 4px;
+    background-color: var(--color-indigo);
+    border-radius: 40px;
+    pointer-events: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  }
+}
+
+.tippy-box[data-theme~="ftip-range"] {
+  background-color: var(--color-slate);
+
+  .tippy-content {
+    padding: 8px;
+    line-height: 21px;
+    min-width: 32px;
+    text-align: center;
+  }
+
+  .tippy-arrow {
+    color: var(--color-slate);
+    width: 22px;
+    height: 22px;
+  }
+
+  &[data-placement^="bottom"] > .tippy-arrow::before {
+    top: -10px;
+    border-width: 0 11px 11px;
+  }
+
+  &[data-placement^="top"] > .tippy-arrow::before {
+    bottom: -10px;
+    border-width: 11px 11px 0;
+  }
+}

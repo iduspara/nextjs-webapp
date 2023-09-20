@@ -1,0 +1,25 @@
+.main-content {
+  max-width: 100vw;
+  overflow-x: hidden;
+  padding-top: calc(var(--header-height-mobile) + var(--main-nav-bar-height-mobile));
+
+  @media (min-width: $break-sm) {
+    padding-top: calc(var(--header-height-tablet) + var(--main-nav-bar-height-tablet));
+  }
+
+  @media (min-width: $break-md) {
+    padding-top: calc(var(--header-height-desktop) + var(--main-nav-bar-height-desktop));
+  }
+
+  &.no-main-navigation-bar {
+    padding-top: var(--header-height-mobile);
+
+    @media (min-width: $break-sm) {
+      padding-top: var(--header-height-tablet);
+    }
+
+    @media (min-width: $break-md) {
+      padding-top: var(--header-height-desktop);
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.section-nav {
+  .section-nav-title {
+    align-items: baseline;
+  }
+
+  ol {
+    li {
+      margin-bottom: 16px;
+
+      &::before {
+        font-weight: normal;
+        text-align: center;
+      }
+
+      .counter {
+        display: inline-block;
+        min-width: 24px;
+        margin-right: var(--spacing-m);
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+/* stylelint-disable selector-class-pattern */
+.tippy-box[data-theme~="ftip"] {
+  background-color: var(--color-slate);
+  text-align: left;
+  padding: 0;
+  -webkit-font-smoothing: initial;
+  -moz-osx-font-smoothing: initial;
+
+  @media (min-width: $break-sm) {
+    max-width: 300px !important;
+  }
+
+  @media (min-width: $break-md) {
+    max-width: 435px !important;
+  }
+
+  .tippy-arrow {
+    color: var(--color-slate);
+    width: 22px;
+    height: 22px;
+  }
+
+  .tooltip {
+    .tooltip__text,
+    .tooltip__text p {
+      line-height: 21px;
+      font-size: var(--font-size-xxs);
+      font-weight: normal;
+    }
+  }
+
+  .tippy-content {
+    padding: 0;
+  }
+
+  &[data-placement^="bottom"] > .tippy-arrow::before {
+    top: -11px;
+    border-width: 0 11px 11px;
+  }
+
+  &[data-placement^="top"] > .tippy-arrow::before {
+    bottom: -11px;
+    border-width: 11px 11px 0;
+  }
+}

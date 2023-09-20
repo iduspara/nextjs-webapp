@@ -1,0 +1,69 @@
+.faq-accordion {
+  font-family: var(--font-family-inter);
+
+  .accordion-content {
+    position: relative;
+    transition: margin-bottom var(--animation-duration-l);
+    margin-bottom: var(--spacing-m);
+
+    @media (min-width: $break-sm) {
+      margin-bottom: var(--spacing-xl);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::after {
+      position: absolute;
+      width: calc(100% + 2 * var(--spacing-m));
+      height: calc(100% + 2 * var(--spacing-xs));
+      top: calc(-1 * var(--spacing-xs));
+      left: calc(-1 * var(--spacing-m));
+      content: "";
+      z-index: var(--z-index-xxs);
+      background-color: transparent;
+      transition: background-color var(--animation-duration-l);
+
+      @media (min-width: $break-sm) {
+        width: calc(100% + 2 * var(--spacing-m));
+        height: calc(100% + 2 * var(--spacing-m));
+        top: calc(-1 * var(--spacing-m));
+        left: calc(-1 * var(--spacing-m));
+      }
+    }
+
+    .accordion-header {
+      .h5 {
+        color: var(--color-indigo);
+        transition: color var(--animation-duration-l);
+        margin-bottom: 0;
+      }
+    }
+
+    &.open {
+      &::after {
+        background-color: var(--color-highlightgrey);
+      }
+
+      .accordion-header .h5 {
+        color: var(--color-slate);
+      }
+    }
+
+    &:last-of-type.open {
+      margin-bottom: var(--spacing-xs);
+
+      @media (min-width: $break-sm) {
+        margin-bottom: var(--spacing-m);
+      }
+    }
+
+    .accordion-body .text {
+      &:last-child,
+      :last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

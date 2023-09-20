@@ -1,0 +1,65 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable selector-id-pattern */
+.credit-calculator {
+  #initialResultContainer {
+    .row {
+      margin-top: var(--spacing-s);
+
+      &:first-child {
+        margin-top: var(--spacing-xl);
+      }
+    }
+  }
+
+  .result-container {
+    .label-tooltip,
+    .calculated-result {
+      @media (min-width: $break-sm) {
+        font-size: var(--font-size-s);
+      }
+    }
+  }
+
+  .range-label {
+    flex-shrink: 0;
+  }
+
+  label[for="interest"] {
+    max-width: 118px;
+
+    @media (min-width: $break-sm) {
+      max-width: unset;
+    }
+  }
+
+  .result-container-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+
+    @media (min-width: $break-sm) {
+      flex-direction: row;
+    }
+
+    > div {
+      @media (min-width: $break-sm) {
+        flex: 2 1 0;
+
+        &:nth-child(even) {
+          padding-left: var(--spacing-xl);
+        }
+
+        &:nth-child(odd) {
+          padding-right: var(--spacing-xl);
+        }
+      }
+
+      .row {
+        margin-top: var(--spacing-s);
+        white-space: nowrap;
+      }
+    }
+  }
+}

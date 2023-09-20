@@ -1,0 +1,25 @@
+@media (min-width: $break-sm) {
+  .row.justify-content-sm-center {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (min-width: $break-md) {
+  .row.justify-content-md-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .row.justify-content-md-start {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: $break-lg) {
+  .row.justify-content-lg-center {
+    display: flex;
+    justify-content: center;
+  }
+}

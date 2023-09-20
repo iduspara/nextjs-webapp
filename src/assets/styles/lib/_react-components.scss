@@ -1,0 +1,171 @@
+/* stylelint-disable no-descending-specificity */
+.react-article-rating .voting-box {
+  height: 140px;
+
+  @media (min-width: $break-sm) {
+    height: 74px;
+  }
+
+  @media (min-width: $break-md) {
+    height: 82px;
+  }
+}
+
+.react-newsletter-footer,
+.react-newsletter-signupform,
+.react-newsletter-sticky-signupform {
+  .input {
+    padding: 0 0 16px;
+    width: 100%;
+    min-height: 43px;
+    outline: none;
+    color: var(--color-white);
+    background: none;
+    border-style: none;
+    border-bottom: solid 1px var(--color-white);
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-xs);
+    appearance: none;
+    border-radius: 0;
+
+    @media (min-width: $break-sm) {
+      font-size: var(--font-size-s);
+      line-height: var(--line-height-s);
+    }
+
+    &.error {
+      border-bottom-color: #ff3746;
+    }
+
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: var(--color-grey);
+      opacity: 1; /* Firefox */
+    }
+
+    /* stylelint-disable-next-line selector-no-vendor-prefix */
+    &:-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: var(--color-grey);
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: var(--color-white);
+      box-shadow: none;
+      transition: background-color 5000s ease-in-out 0s;
+      caret-color: white;
+      font-size: var(--font-size-xs);
+      line-height: var(--line-height-xs);
+    }
+
+    &:-webkit-autofill::first-line {
+      letter-spacing: inherit;
+      font-size: var(--font-size-xs);
+      line-height: var(--line-height-xs);
+    }
+
+    &:autofill::first-line {
+      letter-spacing: inherit;
+      font-size: var(--font-size-xs);
+      line-height: var(--line-height-xs);
+    }
+
+    &:-internal-input-suggested {
+      letter-spacing: 10px;
+    }
+
+    &:autofill,
+    &:autofill:hover,
+    &:autofill:focus {
+      -webkit-text-fill-color: var(--color-white);
+      box-shadow: none;
+      caret-color: white;
+      transition: background-color 5000s ease-in-out 0s;
+      font-size: var(--font-size-xs);
+      line-height: var(--line-height-xs);
+    }
+
+    @media (min-width: $break-sm) {
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus {
+        font-size: var(--font-size-s);
+        line-height: var(--line-height-s);
+      }
+
+      &:-webkit-autofill::first-line {
+        font-size: var(--font-size-s);
+        line-height: var(--line-height-s);
+      }
+
+      &:autofill::first-line {
+        font-size: var(--font-size-s);
+        line-height: var(--line-height-s);
+      }
+
+      &:autofill,
+      &:autofill:hover,
+      &:autofill:focus {
+        font-size: var(--font-size-s);
+        line-height: var(--line-height-s);
+      }
+    }
+  }
+}
+
+.react-newsletter-signupform {
+  .input {
+    color: var(--color-slate);
+    border-bottom: solid 1.5px var(--color-slate);
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: var(--color-slate) !important;
+      box-shadow: none;
+      transition: background-color 5000s ease-in-out 0s;
+      caret-color: var(--color-slate);
+      font-size: var(--font-size-xs);
+      line-height: var(--line-height-xs);
+    }
+
+    &:autofill,
+    &:autofill:hover,
+    &:autofill:focus {
+      -webkit-text-fill-color: var(--color-slate) !important;
+      box-shadow: none;
+      caret-color: var(--color-slate);
+      transition: background-color 5000s ease-in-out 0s;
+      font-size: var(--font-size-xs);
+      line-height: var(--line-height-xs);
+    }
+  }
+
+  .shared-messages-success {
+    font-size: var(--font-size-xxs);
+    line-height: var(--line-height-tight);
+    color: var(--color-slate);
+  }
+}
+
+.shared-messages-success {
+  font-size: var(--font-size-xxs);
+  line-height: var(--line-height-tight);
+  color: var(--color-slate);
+
+  .react-newsletter-footer & {
+    color: var(--color-white);
+  }
+}
+
+.shared-success-doi {
+  font-size: var(--font-size-xxs);
+  line-height: var(--line-height-tight);
+  color: var(--color-slate);
+
+  .react-newsletter-footer & {
+    color: var(--color-white);
+  }
+}

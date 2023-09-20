@@ -1,0 +1,631 @@
+/* stylelint-disable alpha-value-notation */
+/* stylelint-disable color-function-notation */
+/* stylelint-disable no-descending-specificity */
+.overlay {
+  font-family: var(--font-family-inter);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000000;
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  &.sidebar {
+    display: block;
+    pointer-events: none;
+
+    .overlay-close {
+      transition: opacity var(--animation-duration-l);
+      opacity: 0;
+    }
+
+    .modal-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      max-width: 480px;
+      transform: translateX(100%);
+      transition: transform var(--animation-duration-l);
+      background-color: var(--color-white);
+    }
+
+    $modalHeaderHeightMenu: 24px;
+    $modalHeaderHeightMobile: 48px;
+    $modalHeaderHeightDesktop: 64px;
+
+    .modal-header,
+    .modal-footer {
+      position: relative;
+      height: $modalHeaderHeightMobile;
+
+      @media (min-width: $break-sm) {
+        height: $modalHeaderHeightDesktop;
+      }
+
+      &::after {
+        position: absolute;
+        bottom: -43px;
+        left: 0;
+        z-index: 10;
+        display: block;
+        width: 100%;
+        height: 43px;
+        content: "";
+        pointer-events: none;
+        background: linear-gradient(180deg, var(--color-white) 20%, rgba(255, 255, 255, 0%) 100%);
+        opacity: 0;
+        transition: opacity var(--animation-duration-l);
+      }
+
+      &.scroll-top,
+      &.scroll-bottom {
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    .modal-footer {
+      &::after {
+        bottom: auto;
+        top: -43px;
+        background: linear-gradient(360deg, var(--color-white) 20%, rgba(255, 255, 255, 0%) 100%);
+      }
+    }
+
+    .content {
+      overflow: auto;
+      max-height: calc(100% - #{$modalHeaderHeightMobile} * 2);
+
+      @media (min-width: $break-sm) {
+        max-height: calc(100% - #{$modalHeaderHeightDesktop} * 2);
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: var(--spacing-xl);
+      right: var(--spacing-xl);
+      width: 24px;
+      height: 24px;
+      background-size: 24px;
+      z-index: 11;
+    }
+
+    .overlay-close,
+    .modal-close {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &.active {
+      pointer-events: all;
+
+      .overlay-close {
+        opacity: 1;
+      }
+
+      .modal-right {
+        transform: translateX(0);
+      }
+    }
+
+    &#menu-overlay {
+      top: var(--header-height-mobile);
+
+      @media (min-width: $break-sm) {
+        top: var(--header-height-tablet);
+      }
+
+      @media (min-width: $break-md) {
+        top: var(--header-height-desktop);
+      }
+
+      .modal-close {
+        display: none;
+      }
+
+      .modal-header,
+      .modal-footer {
+        height: $modalHeaderHeightMenu;
+      }
+
+      .content {
+        max-height: calc(100% - #{$modalHeaderHeightMenu} * 2);
+
+        @media (min-width: $break-sm) {
+          max-height: calc(100% - #{$modalHeaderHeightMenu} * 2);
+        }
+      }
+    }
+  }
+
+  .overlay-close {
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
+  .modal {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: var(--font-size-xxs);
+    line-height: var(--line-height-tight);
+
+    @media (min-width: $break-sm) {
+      font-size: var(--font-size-xs);
+      position: relative;
+      width: 688px;
+      margin: 0 auto;
+      margin-top: 120px;
+      margin-bottom: 120px;
+
+      /* 240 = top + bottom padding 120px each */
+      max-height: calc(100vh - 240px);
+
+      &.small {
+        width: 332px;
+      }
+    }
+
+    @media (min-width: $break-md) {
+      width: 738px;
+
+      &.small {
+        width: 358px;
+      }
+    }
+
+
+    .box {
+      padding: var(--spacing-m);
+      display: flex;
+      flex-flow: column;
+      max-height: calc(100vh - 120px);
+      min-height: 380px;
+      background: var(--color-white);
+      border-radius: 4px 4px 0 0;
+
+      @media (min-width: $break-sm) {
+        padding: var(--spacing-xl);
+        max-height: calc(100vh - 240px);
+        border-radius: 4px;
+      }
+    }
+
+    &.small .box {
+      min-height: auto;
+    }
+
+    .modal-header {
+      position: relative;
+
+      /* This height is calulated on base on height + bottom spacing -> 28 + 24. And we need it for modals with empty headings   */
+      min-height: 52px;
+      flex: 0 1 auto;
+    }
+
+    .modal-header,
+    .modal-footer {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        bottom: -37px;
+        left: 0;
+        z-index: 10;
+        display: block;
+        width: 100%;
+        height: 43px;
+        content: "";
+        pointer-events: none;
+        transition: opacity 0.4s;
+        opacity: 0;
+        background: linear-gradient(180deg, var(--color-white) 20%, rgba(255, 255, 255, 0%) 100%);
+      }
+
+      &.scroll-top::after,
+      &.scroll-bottom::after {
+        opacity: 1;
+      }
+    }
+
+    .modal-footer {
+      padding-top: var(--spacing-m);
+      flex: 0 1 auto;
+
+      &::after {
+        bottom: auto;
+        top: -40px;
+        background: linear-gradient(360deg, var(--color-white) 20%, rgba(255, 255, 255, 0%) 100%);
+      }
+    }
+
+    &.modal-newsletter {
+      font-size: var(--font-size-xxs);
+      line-height: var(--line-height-tight);
+
+      @media (min-width: $break-sm) {
+        min-height: 430px;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+
+      .modal-header {
+        min-height: auto;
+        margin-top: calc(24px + (100% - 0vw) / 2);
+
+        @media (min-width: $break-sm) {
+          margin-top: 0;
+        }
+      }
+
+      .box {
+        position: relative;
+        overflow: hidden;
+        align-items: flex-end;
+        background: var(--color-white);
+
+        @media (min-width: $break-sm) {
+          padding: var(--spacing-xl);
+          min-height: 430px;
+          padding-left: 311px;
+        }
+
+        @media (min-width: $break-md) {
+          min-height: 445px;
+        }
+
+        &::before {
+          content: "";
+          background-color: var(--color-white);
+          position: absolute;
+          border-radius: 100%;
+          transform: translate(-50%, -50%);
+          width: 512px;
+          height: 512px;
+          top: -70px;
+          left: 50%;
+
+          @media (min-width: $break-sm) {
+            width: 720px;
+            height: 720px;
+            top: 50%;
+            left: -130px;
+          }
+
+          @media (min-width: $break-md) {
+            left: -80px;
+          }
+        }
+
+        div[class*="col-"] {
+          /* We need to add auto min-height becasue bootstrap col-* classes adds min-height: 1px which breaks flex auto scroll */
+          min-height: auto;
+        }
+      }
+
+      .nl-team-image {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 200;
+        pointer-events: none;
+
+        img {
+          width: 100%;
+        }
+
+        @media (min-width: $break-sm) {
+          display: none;
+        }
+      }
+
+      .nl-team-image-tablet {
+        display: none;
+
+        @media (min-width: $break-sm) {
+          display: block;
+          position: absolute;
+          top: 0;
+          width: 271px;
+          z-index: 200;
+          pointer-events: none;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
+
+      .modal-header,
+      .modal-footer {
+        &::after {
+          background: linear-gradient(180deg, var(--color-white) 20%, rgba(255, 255, 255, 0%) 100%);
+        }
+      }
+
+      .nl-content {
+        margin-top: 187px;
+
+        @media (min-width: $break-sm) {
+          margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+          height: 100%;
+        }
+      }
+
+      .nl-image {
+        position: absolute;
+        top: -70px;
+        left: 50%;
+        z-index: 200;
+        width: 512px;
+        height: 512px;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        border-radius: 100%;
+        overflow: hidden;
+
+        @media (min-width: $break-sm) {
+          top: auto;
+          bottom: 0;
+          left: 0;
+          transform: translate(0);
+          border-radius: 0;
+        }
+
+        img {
+          position: absolute;
+          bottom: -127px;
+          width: 272px;
+          left: 51%;
+          transform: translateX(-50%);
+          display: block;
+          margin-bottom: 0;
+
+          @media (min-width: $break-sm) {
+            width: 370px;
+            left: -101px;
+            bottom: -21px;
+            max-width: none;
+            transform: translateX(0);
+          }
+
+          @media (min-width: $break-md) {
+            width: 400px;
+            left: -84px;
+            bottom: -28px;
+          }
+        }
+      }
+
+      .nl-image-label {
+        font-size: var(--font-size-xxxs);
+        font-weight: 700;
+        line-height: 16px;
+        white-space: nowrap;
+        background-color: var(--color-orange);
+        border-radius: 24px;
+        padding: 2px 8px;
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+        bottom: 30px;
+
+        @media (min-width: $break-sm) {
+          transform: translateX(0);
+          left: 8px;
+          bottom: 14.5px;
+        }
+
+        @media (min-width: $break-md) {
+          left: 22px;
+          bottom: 15.5px;
+        }
+      }
+
+
+
+      .modal-footer {
+        width: 100%;
+
+        &::after {
+          background: linear-gradient(360deg, var(--color-white) 20%, rgba(255, 255, 255, 0%) 100%);
+        }
+
+        @media (max-width: $break-xs-max) {
+          padding-top: var(--spacing-s);
+          width: 100%;
+
+          @media (min-width: $break-sm) {
+            padding-top: var(--spacing-xl);
+          }
+        }
+      }
+
+      .modal-close {
+        top: calc(200px + 40*(0.2vw));
+
+        @media (min-width: $break-sm) {
+          top: var(--spacing-xl);
+        }
+      }
+    }
+
+    .overlay-heading {
+      margin-bottom: var(--spacing-m);
+      margin-right: 48px;
+      padding: 0;
+      font-size: var(--font-size-m);
+      line-height: var(--line-height-title);
+      font-weight: 700;
+
+      @media (min-width: $break-sm) {
+        font-size: var(--font-size-l);
+      }
+    }
+
+    .pro,
+    .con,
+    .neutral {
+      li {
+        padding-left: var(--spacing-xs);
+        margin-bottom: var(--spacing-xxs);
+      }
+    }
+
+    .pro {
+      li {
+        &::before {
+          @extend .icon-rating-good;
+        }
+      }
+    }
+
+    .con {
+      li {
+        &::before {
+          @extend .icon-rating-bad;
+        }
+      }
+    }
+
+    .neutral {
+      li {
+        &::before {
+          @extend .icon-rating-neutral;
+        }
+      }
+    }
+
+    .content {
+      overflow: auto;
+      flex: 1 1 auto;
+      min-height: 100px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    .modal-close {
+      display: inline-block;
+      font-size: var(--font-size-l);
+      z-index: 11;
+      cursor: pointer;
+      position: absolute;
+      top: var(--spacing-m);
+      right: var(--spacing-m);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+
+      @media (min-width: $break-sm) {
+        top: var(--spacing-xl);
+        right: var(--spacing-xl);
+        max-height: calc(100vh - 240px);
+      }
+    }
+
+    .expert-description {
+      font-weight: 400;
+
+      p {
+        font-size: var(--font-size-xs);
+      }
+    }
+  }
+
+  &.state-new,
+  &.state-soi,
+  &.state-doi {
+    .modal-newsletter {
+      .modal-header::after,
+      .modal-footer::after {
+        display: none;
+
+        @media (min-width: $break-sm) {
+          display: block;
+        }
+      }
+
+      .content {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s ease;
+
+        @media (min-width: $break-sm) {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+
+  &#modal-popup-signup-wall-overlay {
+    .box,
+    .box .content {
+      min-height: initial;
+    }
+  }
+
+  .modal-social-icons {
+    display: flex;
+    gap: var(--spacing-m);
+    justify-content: center;
+
+    @media (min-width: $break-sm) {
+      justify-content: left;
+    }
+
+    [class^="icon-"] {
+      border-bottom: none;
+      width: 24px;
+      height: 24px;
+      background-size: 100%;
+      background-position: center;
+    }
+  }
+}
+
+#modal-popup-expert-overlay {
+  .modal-header {
+    min-height: auto;
+  }
+
+  .expert-title {
+    margin-bottom: var(--spacing-xxs);
+
+    @media (min-width: $break-sm) {
+      margin-bottom: var(--spacing-s);
+    }
+  }
+
+  .expert-description {
+    font-size: var(--font-size-xxs);
+    line-height: var(--line-height-tight);
+
+    @media (min-width: $break-sm) {
+      font-size: var(--font-size-xs);
+      line-height: var(--line-height-xs);
+    }
+  }
+}

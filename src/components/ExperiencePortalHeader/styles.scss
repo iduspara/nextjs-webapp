@@ -1,0 +1,78 @@
+.experience-portal-header {
+  font-family: var(--font-family-inter);
+  padding: var(--spacing-xl) 0 var(--spacing-l);
+
+  @media (min-width: $break-sm) {
+    padding: var(--spacing-xl) 0;
+  }
+
+  &.overview-header {
+    background-color: var(--color-skyblue);
+  }
+
+  h2 {
+    font-family: var(--font-family-inter);
+    hyphens: auto;
+
+    @media (min-width: $break-sm) {
+      font-size: var(--font-size-xl);
+    }
+
+    @media (min-width: $break-md) {
+      font-size: var(--font-size-xxl);
+    }
+  }
+
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    & .custom-select {
+      width: 100%;
+      background-color: #fff;
+    }
+
+    @media (min-width: $break-sm) {
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 64px;
+
+      & .custom-select {
+        width: 284px;
+      }
+    }
+
+    @media (min-width: $break-md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .searchform {
+    max-width: 100%;
+    margin: 0;
+
+    @media (min-width: $break-sm) {
+      max-width: 50%;
+    }
+
+    @media (min-width: $break-md) {
+      max-width: 420px;
+    }
+  }
+
+  .provider-logo {
+    display: flex;
+    align-items: center;
+    width: 160px;
+    height: 50px;
+    margin-bottom: var(--spacing-m);
+
+    img {
+      display: block;
+      max-height: 100%;
+    }
+  }
+}

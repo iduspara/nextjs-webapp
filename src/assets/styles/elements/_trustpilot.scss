@@ -1,0 +1,38 @@
+.trustpilot {
+  margin-top: var(--spacing-xl);
+
+  @media (min-width: $break-sm) {
+    margin-top: var(--spacing-xxxl);
+  }
+
+  .trustpilot-spacing {
+    .trustpilot-subline {
+      font-family: var(--font-family-inter);
+      font-size: var(--font-size-xs);
+      font-style: normal;
+      font-weight: 400;
+      line-height: var(--line-height-xs);
+      color: #243039;
+      margin-bottom: var(--spacing-m);
+
+      @media (min-width: $break-sm) {
+        margin-bottom: 30px;
+      }
+    }
+
+    .trustpilot-button {
+      margin-bottom: var(--spacing-m);
+
+      @media (min-width: $break-sm) {
+        position: absolute;
+        right: 12px;
+        top: 2px;
+        margin-bottom: 0;
+      }
+    }
+
+    h3 {
+      margin-bottom: var(--spacing-xxs);
+    }
+  }
+}

@@ -1,0 +1,111 @@
+.author {
+  padding: var(--spacing-m);
+  font-family: var(--font-family-inter);
+
+  @media (min-width: $break-sm) {
+    padding: var(--spacing-xl);
+  }
+
+  @media (min-width: $break-md) {
+    padding: var(--spacing-xxxl);
+  }
+
+  .author-header {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $break-sm) {
+      flex-direction: row;
+    }
+  }
+
+  .author-image {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 88px;
+    height: 88px;
+    margin-bottom: var(--spacing-sm);
+    margin-right: var(--spacing-xl);
+
+    @media (min-width: $break-sm) {
+      width: 106px;
+      height: 106px;
+    }
+
+    @media (min-width: $break-md) {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  .author-name {
+    font-weight: 700;
+    font-size: var(--font-size-l);
+    line-height: var(--line-height-title);
+    margin: 0;
+    text-align: left;
+
+    @media (min-width: $break-sm) {
+      font-size: var(--font-size-xl);
+    }
+  }
+
+  .author-slogan::before {
+    content: "\A";
+    white-space: pre;
+  }
+
+  .author-description {
+    font-family: var(--font-family-charter);
+    font-size: var(--font-size-guidebook-phone);
+    line-height: 170%;
+    padding-top: var(--spacing-l);
+
+    @media (min-width: $break-sm) {
+      font-size: var(--font-size-m);
+    }
+
+    @media (min-width: $break-md) {
+      margin-left: 160px;
+    }
+  }
+
+  .social-links {
+    margin-top: var(--spacing-l);
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-m);
+
+    a {
+      &:link {
+        border-bottom: none;
+      }
+
+      &:hover {
+        color: var(--color-orange);
+        outline: none;
+        [class^="icon-"] {
+          /* stylelint-disable-next-line function-url-quotes */
+          filter: url(#orange);
+        }
+      }
+    }
+  }
+
+  .separator {
+    display: block;
+    width: 248px;
+    height: 2px;
+    background-color: var(--color-slate);
+    margin: var(--spacing-m) 0 0 0;
+  }
+
+  .author-role {
+    font-weight: 400;
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-xs);
+    padding-top: var(--spacing-xs);
+    display: block;
+    margin: 0;
+  }
+}

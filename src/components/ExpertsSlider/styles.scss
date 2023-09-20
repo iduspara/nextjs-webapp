@@ -1,0 +1,17 @@
+/* stylelint-disable selector-class-pattern */
+.experts-slider {
+  font-family: var(--font-family-inter);
+  background-color: var(--color-mint);
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+
+  @media (min-width: $break-sm) {
+    padding: var(--spacing-xxxl) 0;
+  }
+
+  h3 {
+    padding: 0;
+    text-align: center;
+    margin-bottom: var(--spacing-m);
+  }
+}

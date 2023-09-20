@@ -1,0 +1,120 @@
+/* stylelint-disable alpha-value-notation */
+/* stylelint-disable color-function-notation */
+/* stylelint-disable selector-class-pattern */
+/* stylelint-disable no-descending-specificity */
+.pgt-result-top {
+  background-color: var(--color-mint);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+  padding: var(--spacing-xl) var(--spacing-m);
+  margin: 0 calc(-1 * var(--spacing-m)) var(--spacing-xl) calc(-1 * var(--spacing-m));
+
+  @media (min-width: $break-sm) {
+    padding: var(--spacing-xl);
+    margin: 0 calc(-1 * var(--spacing-xl)) var(--spacing-xl) calc(-1 * var(--spacing-xl));
+  }
+
+  h4 {
+    font-size: var(--font-size-m);
+
+    &:last-child {
+      margin-bottom: var(--spacing-m);
+
+      @media (min-width: $break-sm) {
+        margin-bottom: var(--spacing-xl);
+      }
+    }
+  }
+
+  .pgt-advantages {
+    margin-top: var(--spacing-m);
+    font-size: var(--font-size-xxs);
+    line-height: var(--line-height-tight);
+    display: flex;
+
+    @media (min-width: $break-sm) {
+      margin-top: var(--spacing-xl);
+    }
+  }
+}
+
+.pgt-buttons-container {
+  h4 {
+    font-size: var(--font-size-xxs);
+    margin-bottom: var(--spacing-xxs);
+    color: var(--color-grey);
+    font-weight: 400;
+    line-height: var(--line-height-tight);
+
+    @media (min-width: $break-md) {
+      margin-bottom: var(--spacing-xxxs);
+      text-align: right;
+    }
+  }
+
+  .pgt-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: var(--spacing-xxs);
+
+    @media (min-width: $break-sm) and (max-width: $break-sm-max) {
+      flex-direction: column;
+    }
+
+    @media (min-width: $break-md) {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.pgt-item-price {
+  margin-bottom: var(--spacing-m) !important;
+
+  @media (min-width: $break-sm) and (max-width: $break-sm-max) {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-m);
+  }
+
+  @media (min-width: $break-sm) {
+    margin-bottom: 0 !important;
+  }
+}
+
+.gas-tool-calculator__results,
+.power-tool-calculator__results {
+  ul li {
+    font-size: var(--font-size-xxs);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--spacing-s);
+
+    @media (min-width: $break-sm) {
+      font-size: var(--font-size-xs);
+    }
+  }
+
+  .details ul li {
+    line-height: var(--line-height-xxs);
+
+    @media (min-width: $break-sm) {
+      line-height: var(--line-height-tight);
+    }
+  }
+}
+
+.gas-tool-calculator__submit-btn,
+.power-tool-calculator__submit-btn {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.commoncarrier-container {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-m);
+
+  & .result-item {
+    border-bottom: none;
+  }
+}

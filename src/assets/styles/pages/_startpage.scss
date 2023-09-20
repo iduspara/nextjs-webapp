@@ -1,0 +1,69 @@
+/* startpage specific styles */
+
+.ft-startpage {
+  font-size: var(--font-size-xs);
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  h3 {
+    font-size: var(--font-size-l);
+
+    @media (min-width: $break-sm) {
+      font-size: var(--font-size-xl);
+    }
+  }
+
+  h4 {
+    font-size: var(--font-size-m);
+
+    @media (min-width: $break-sm) {
+      font-size: var(--font-size-l);
+    }
+  }
+
+  .startpage-title {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-m);
+
+    @media (min-width: $break-sm) {
+      margin-bottom: var(--spacing-xl);
+    }
+
+    h1 {
+      font-size: var(--font-size-l);
+      font-weight: 700;
+      line-height: var(--line-height-title);
+      color: var(--color-slate);
+      margin-bottom: var(--spacing-xxs);
+
+      @media (min-width: $break-sm) {
+        font-size: var(--font-size-xl);
+      }
+
+      @media (min-width: $break-md) {
+        font-size: var(--font-size-xxl);
+      }
+    }
+
+    h2 {
+      font-size: var(--font-size-xs);
+      line-height: var(--line-height-tight);
+      color: var(--color-slate);
+      font-weight: normal;
+    }
+  }
+
+  .alert {
+    @media (min-width: $break-md) {
+      margin-top: var(--spacing-xl);
+      font-size: var(--font-size-xxs);
+      line-height: var(--line-height-xxs);
+    }
+  }
+}

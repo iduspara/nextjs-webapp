@@ -1,0 +1,98 @@
+/* stylelint-disable alpha-value-notation */
+/* stylelint-disable color-function-notation */
+.link-list {
+  font-family: var(--font-family-inter);
+  background: linear-gradient(180deg, rgba(226, 229, 232, 0.5) 0%, rgba(226, 229, 232, 0) 100%), var(--color-white);
+  padding: var(--spacing-xl) 0;
+
+  @media (min-width: $break-md) {
+    padding: var(--spacing-xl);
+  }
+
+  .link-list-headline {
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    text-align: left;
+
+    @media (min-width: $break-sm) {
+      margin-bottom: var(--spacing-xl);
+    }
+  }
+
+  .link-list-container,
+  .link-list-container-remaining {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-m);
+
+    @media (min-width: $break-sm) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: $break-md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .link-list-container-remaining {
+    margin-top: var(--spacing-m);
+  }
+
+  .remaining-toggle {
+    transition: margin-top var(--animation-duration-l);
+    margin-top: var(--spacing-s);
+
+    &.active {
+      margin-top: var(--spacing-xl);
+    }
+  }
+
+  .link-list-link {
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-s);
+    padding: var(--spacing-xs);
+    border-bottom: 0;
+    transition: box-shadow var(--animation-duration-l);
+    box-shadow: var(--box-shadow-small);
+    font-weight: 700;
+    font-size: var(--font-size-xxs);
+    line-height: var(--line-height-xxs);
+
+    @media (min-width: $break-md) {
+      padding-right: var(--spacing-m);
+      font-size: var(--font-size-xs);
+      line-height: var(--line-height-xs);
+    }
+
+    &:hover {
+      box-shadow: var(--box-shadow-large);
+    }
+
+    img {
+      margin-bottom: 0;
+      max-width: 48px;
+    }
+
+    .link-label {
+      display: block;
+      flex-grow: 1;
+    }
+
+    .link-icon {
+      flex-shrink: 0;
+      font-size: var(--font-size-l);
+    }
+
+    .icon-download {
+      width: 34px;
+      height: 34px;
+      background-color: var(--color-indigo);
+      border-radius: 100%;
+      background-position: center;
+      background-size: 20px 20px;
+    }
+  }
+}

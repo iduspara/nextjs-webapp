@@ -1,0 +1,91 @@
+/* stylelint-disable color-function-notation */
+/* stylelint-disable selector-class-pattern */
+.floating-toc {
+  #floating-toc-button {
+    position: fixed;
+    bottom: var(--spacing-m);
+    right: var(--spacing-m);
+    z-index: 9000003;
+  }
+
+  .floating-toc__button-label {
+    position: fixed;
+    right: 112px;
+    bottom: 46px;
+    z-index: 9000003;
+  }
+
+  .floating-toc__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: var(--color-shader);
+    z-index: 9000001;
+  }
+
+  .floating-toc__wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 480px;
+    background: var(--color-white);
+    z-index: 9000002;
+
+    &.scroll-top::before,
+    &.scroll-bottom::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: var(--spacing-xl);
+      z-index: 10;
+    }
+
+    &.scroll-top::before {
+      top: 0;
+      background:
+        linear-gradient(
+          180deg,
+          #fff 20%,
+          rgba(255, 255, 255, 0%) 100%
+        );
+    }
+
+    &.scroll-bottom::after {
+      bottom: calc(var(--spacing-xxxl) + var(--spacing-s));
+      background:
+        linear-gradient(
+          0deg,
+          #fff 20%,
+          rgba(255, 255, 255, 0%) 100%
+        );
+    }
+  }
+
+  .floating-toc__content {
+    height: calc(100% - 96px);
+    overflow-y: auto;
+  }
+
+  .floating-toc__toc li::before {
+    text-align: center;
+  }
+
+  .floating-toc__toc li:not(.active)::before {
+    font-weight: normal;
+  }
+
+  /* disable hover on mobile */
+  @media (hover: hover) and (pointer: fine) {
+    .floating-toc__toc li:hover,
+    .floating-toc__toc li:hover a {
+      color: var(--color-orange);
+    }
+  }
+
+  .active {
+    font-weight: bold;
+  }
+}

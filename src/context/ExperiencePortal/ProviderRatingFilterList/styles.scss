@@ -1,0 +1,40 @@
+.provider-rating-filter-list {
+  font-family: var(--font-family-inter);
+
+  .provider-rating-wrapper {
+    position: relative;
+
+    .spinner-wrapper {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .show-all-button {
+    display: flex;
+    gap: var(--spacing-xs);
+    align-items: center;
+
+    .spinner {
+      opacity: 1;
+    }
+  }
+
+  .filter-label {
+    padding-top: var(--spacing-l);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    line-height: var(--line-height-xs);
+    font-family: var(--font-family-inter);
+
+    @media (min-width: $break-sm) {
+      padding-top: var(--spacing-xl);
+    }
+  }
+
+  .filter-count {
+    font-weight: 400;
+  }
+}
+

@@ -1,0 +1,38 @@
+.trust {
+  .boxes {
+    .box {
+      position: relative;
+      width: 100%;
+
+      @media (min-width: $break-lg) {
+        width: 0;
+        flex-grow: 1;
+      }
+
+      &::before {
+        position: absolute;
+        width: 256px;
+        height: 256px;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        background-color: var(--color-mint);
+        content: "";
+        border-radius: 100%;
+        z-index: -10;
+      }
+
+      &:nth-child(2)::before {
+        background-color: var(--color-skyblue);
+      }
+
+      &:nth-child(3)::before {
+        background-color: var(--color-rose);
+      }
+
+      .description > :last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

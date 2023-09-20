@@ -1,0 +1,13 @@
+.frame-layout-mint {
+  background-color: var(--color-mint);
+
+  .frame-type-textpic .image img {
+    margin-top: var(--spacing-m);
+    margin-bottom: 0;
+  }
+
+  .ce-textpic {
+    margin-left: 15% !important;
+    margin-right: 15% !important;
+  }
+}

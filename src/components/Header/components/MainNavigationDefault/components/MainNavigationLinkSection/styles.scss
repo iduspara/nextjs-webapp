@@ -1,0 +1,42 @@
+.main-navigation-link-section {
+  margin: 0;
+  padding: var(--spacing-xs) 0;
+  border-top: 1px solid var(--color-lightgrey);
+
+  &.section-1 {
+    border-top: none;
+    display: none;
+  }
+
+  /* Temporary fix until Section 1 is implemented */
+  &.section-2 {
+    margin-top: var(--spacing-xs);
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    line-height: var(--line-height-tight);
+
+    &::before {
+      display: none;
+    }
+
+    .navlink {
+      border-bottom: none;
+      font-weight: 700;
+      line-height: var(--line-height-tight);
+      padding: var(--spacing-xs) 0 var(--spacing-xxs);
+      display: block;
+      transition: color var(--animation-duration-l);
+
+      &:visited {
+        color: var(--color-slate);
+      }
+
+      &:hover {
+        color: var(--color-indigo);
+      }
+    }
+  }
+}

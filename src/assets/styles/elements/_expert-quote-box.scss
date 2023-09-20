@@ -1,0 +1,96 @@
+.expert-quote-box {
+  margin-bottom: var(--spacing-xl);
+
+  @media (min-width: $break-sm) {
+    padding-bottom: var(--spacing-m);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $break-sm) {
+      flex-direction: row;
+    }
+
+    .author-info {
+      color: var(--color-grey);
+      padding-top: var(--spacing-m);
+
+      .slogan {
+        font-family: var(--font-family-charter);
+        font-size: var(--font-size-l);
+        font-style: italic;
+        line-height: var(--line-height-middle);
+
+        p {
+          text-align: center;
+          margin-bottom: 0 !important;
+
+          &::before { content: "„"; }
+          &::after { content: "“"; }
+
+          @media (min-width: $break-sm) {
+            text-align: initial;
+          }
+        }
+
+        @media (min-width: $break-sm) {
+          font-size: var(--font-size-lm);
+        }
+      }
+
+      @media (min-width: $break-sm) {
+        padding-left: var(--spacing-xl);
+      }
+
+      .expert-data {
+        font-size: var(--font-size-xxs) !important;
+        line-height: var(--line-height-tight);
+        padding-top: var(--spacing-m) !important;
+        text-align: center;
+
+        .expert-name::after {
+          content: none;
+
+          @media (min-width: $break-sm) {
+            content: "•";
+            margin-left: var(--spacing-xxs);
+            margin-right: var(--spacing-xxs);
+          }
+        }
+
+        @media (min-width: $break-sm) {
+          text-align: left;
+          padding-top: var(--spacing-s) !important;
+          font-size: var(--font-size-xs) !important;
+        }
+      }
+    }
+
+    .expert-img {
+      margin-top: var(--spacing-s);
+      width: 120px;
+      height: 120px;
+      overflow: hidden;
+      vertical-align: top;
+      margin-left: auto;
+      margin-right: auto;
+
+      @media (min-width: $break-sm) {
+        margin-top: var(--spacing-l);
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      img {
+        display: block;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin-bottom: 0;
+      }
+    }
+  }
+}

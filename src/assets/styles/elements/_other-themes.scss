@@ -1,0 +1,22 @@
+.other-themes-left-list,
+.other-themes-right-list {
+  font-family: var(--font-family-inter);
+
+  li {
+    line-height: 0;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.other-themes-right-list li:last-child {
+  margin-bottom: 0 !important;
+}
+
+@media (min-width: $break-sm) {
+  .other-themes-left-list li:last-child {
+    margin-bottom: 0 !important;
+  }
+}

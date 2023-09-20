@@ -1,0 +1,359 @@
+/* stylelint-disable function-url-quotes */
+[class^="icon-"],
+[class*=" icon-"] {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  background-size: 1em 1em;
+  filter: url(#slate);
+
+  &.no-filter {
+    filter: none;
+  }
+
+  &.color-orange {
+    filter: url(#orange);
+  }
+
+  &.color-indigo {
+    filter: url(#indigo);
+  }
+
+  &.color-grey {
+    filter: url(#grey);
+  }
+
+  &.color-spring {
+    filter: url(#spring);
+  }
+
+  &.color-coral {
+    filter: url(#coral);
+  }
+}
+
+.icon-10rew {
+  background-image: url("../../icons/10rew.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-30ff {
+  background-image: url("../../icons/30ff.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-account {
+  background-image: url("../../icons/account.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-answers {
+  background-image: url("../../icons/answers.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-apple-podcasts {
+  background-image: url("../../icons/apple-podcasts.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-arrow {
+  background-image: url("../../icons/arrow.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-arrow-small {
+  background-image: url("../../icons/arrow-small.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-backhand-pointing-right {
+  background-image: url("../../icons/backhand-pointing-right.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-backhand-pointing-up {
+  background-image: url("../../icons/backhand-pointing-up.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-bookmark {
+  background-image: url("../../icons/bookmark.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-chevron-down {
+  background-image: url("../../icons/chevron-down.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-chevron-down-bold {
+  background-image: url("../../icons/chevron-down-bold.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-chevron-left {
+  background-image: url("../../icons/chevron-left.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-chevron-right {
+  background-image: url("../../icons/chevron-right.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-chevron-up {
+  background-image: url("../../icons/chevron-up.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-close {
+  background-image: url("../../icons/close.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-comment {
+  background-image: url("../../icons/comment.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-copy {
+  background-image: url("../../icons/copy.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-deezer {
+  background-image: url("../../icons/deezer.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-download {
+  background-image: url("../../icons/download.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-e-mail {
+  background-image: url("../../icons/e-mail.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-emotional-expert {
+  background-image: url("../../icons/emotional-expert.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-emotional-home {
+  background-image: url("../../icons/emotional-home.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-emotional-list {
+  background-image: url("../../icons/emotional-list.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-emotional-newsletter {
+  background-image: url("../../icons/emotional-newsletter.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-emotional-star {
+  background-image: url("../../icons/emotional-star.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-emotional-user {
+  background-image: url("../../icons/emotional-user.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-exclamation-mark {
+  background-image: url("../../icons/exclamation-mark.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-facebook {
+  background-image: url("../../icons/facebook.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-google-podcasts {
+  background-image: url("../../icons/google-podcasts.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-helped {
+  background-image: url("../../icons/helped.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-info {
+  background-image: url("../../icons/info.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-instagram {
+  background-image: url("../../icons/instagram.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-linkedin {
+  background-image: url("../../icons/linkedin.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-linklist {
+  background-image: url("../../icons/linklist.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-menu {
+  background-image: url("../../icons/menu.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-menu-close {
+  background-image: url("../../icons/menu-close.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-menu-open {
+  background-image: url("../../icons/menu-open.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-navigation-circle-down {
+  background-image: url("../../icons/navigation-circle-down.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-open-book {
+  background-image: url("../../icons/open-book.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-play {
+  background-image: url("../../icons/play.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-play-outline {
+  background-image: url("../../icons/play-outline.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-play-solid {
+  background-image: url("../../icons/play-solid.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-plus {
+  background-image: url("../../icons/plus.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-print {
+  background-image: url("../../icons/print.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-question {
+  background-image: url("../../icons/question.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-rating-bad {
+  background-image: url("../../icons/rating-bad.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-rating-good {
+  background-image: url("../../icons/rating-good.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-rating-neutral {
+  background-image: url("../../icons/rating-neutral.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-search {
+  background-image: url("../../icons/search.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-share {
+  background-image: url("../../icons/share.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-special-bullet {
+  background-image: url("../../icons/special-bullet.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-spotify {
+  background-image: url("../../icons/spotify.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-star {
+  background-image: url("../../icons/star.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-table-no {
+  background-image: url("../../icons/table-no.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-table-yes {
+  background-image: url("../../icons/table-yes.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-thumbs-down {
+  background-image: url("../../icons/thumbs-down.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-thumbs-up {
+  background-image: url("../../icons/thumbs-up.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-tiktok {
+  background-image: url("../../icons/tiktok.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-timestamp {
+  background-image: url("../../icons/timestamp.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-twitter {
+  background-image: url("../../icons/twitter.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-visited {
+  background-image: url("../../icons/visited.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-whatsapp {
+  background-image: url("../../icons/whatsapp.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-xing {
+  background-image: url("../../icons/xing.svg");
+  background-repeat: no-repeat;
+}
+
+.icon-youtube {
+  background-image: url("../../icons/youtube.svg");
+  background-repeat: no-repeat;
+}

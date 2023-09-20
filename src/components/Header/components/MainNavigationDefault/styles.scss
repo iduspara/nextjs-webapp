@@ -1,0 +1,27 @@
+/* stylelint-disable function-url-quotes */
+.main-navigation-default {
+  padding: 0 var(--spacing-m);
+
+  @media (min-width: $break-sm) {
+    padding: 0 var(--spacing-xl);
+  }
+
+  .guides-toggle {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    line-height: var(--line-height-tight);
+    cursor: pointer;
+    border-bottom: 0;
+    padding-bottom: var(--spacing-xxs);
+    transition: color var(--animation-duration-l);
+
+    &:hover {
+      color: var(--color-indigo);
+
+      .icon-chevron-right {
+        filter: url(#indigo);
+      }
+    }
+  }
+}

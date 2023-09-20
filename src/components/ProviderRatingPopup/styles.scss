@@ -1,0 +1,35 @@
+.provider-rating-popup {
+  font-family: var(--font-family-inter);
+  padding-bottom: var(--spacing-xl);
+
+  .rating-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: $break-sm) {
+      flex-direction: row;
+      gap: var(--spacing-xxl);
+    }
+  }
+
+  .rating {
+    display: flex;
+    flex-direction: row;
+    padding-top: var(--spacing-xxs);
+  }
+
+  .headline {
+    font-weight: 700;
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-display);
+  }
+
+  .input-sizer {
+    width: 100%;
+
+    @media (min-width: $break-sm) {
+      width: 50%;
+    }
+  }
+}

@@ -1,0 +1,118 @@
+/* stylelint-disable color-function-notation */
+:root {
+  /* colors */
+  --color-slate: #243039;
+  --color-orange: #fc6e44;
+  --color-orange-light: #ff9575;
+  --color-indigo: #4650df;
+  --color-petrol: #006e78;
+  --color-amber: #fab347;
+  --color-rose: #ebb5c5;
+  --color-mint: #ccf6e5;
+  --color-coral: #ff3746;
+  --color-lilac: #e3d1ff;
+  --color-skyblue: #cde9ff;
+  --color-grey: #929898;
+  --color-lightgrey: #eceef2;
+  --color-athensgray: #edeef2;
+  --color-white: #fff;
+  --color-highlightgrey: #f5f5f5;
+  --color-deeppurple: #54183e;
+  --color-neutrals-black: #303030;
+  --color-spring: #20b679;
+  --color-shader: rgba(48, 48, 48, 64%);
+
+  /* spacings */
+  --spacing-none: 0;
+  --spacing-px: 1px;
+  --spacing-xxxs: 4px;
+  --spacing-xxs: 8px;
+  --spacing-xs: 12px;
+  --spacing-s: 16px;
+  --spacing-sm: 22px;
+  --spacing-m: 24px;
+  --spacing-l: 32px;
+  --spacing-xl: 40px;
+  --spacing-xxl: 64px;
+  --spacing-xxxl: 80px;
+  --spacing-xxxxl: 104px;
+  --spacing-xxxxxl: 120px;
+
+  /* font sizes */
+  --font-size-xxxs: 12px;
+  --font-size-xxs: 14px;
+  --font-size-xs: 16px;
+  --font-size-s: 18px;
+  --font-size-m: 20px;
+  --font-size-l: 24px;
+  --font-size-lm: 28px;
+  --font-size-xl: 32px;
+  --font-size-xxl: 40px;
+  --font-size-xxxl: 48px;
+  --font-size-xxxxl: 64px;
+  --font-size-guidebook-phone: 17px;
+
+  /* line-heights */
+  --line-height-none: 1;
+  --line-height-small: 1.33;
+  --line-height-middle: 1.4;
+  --line-height-tight: 1.5;
+  --line-height-loose: 1.7;
+  --line-height-display: 1.15;
+  --line-height-title: 1.15;
+  --line-height-xxs: 18px;
+  --line-height-xs: 24px;
+  --line-height-s: 26px;
+
+  /* letter spacings */
+  --letter-spacing-narrow: -0.01em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.01em;
+
+  /* font family */
+  --font-family-lyon: 'Lyon', georgia, serif;
+  --font-family-inter: 'Inter', helvetica, arial, sans-serif;
+  --font-family-charter: 'Charter', georgia, serif;
+
+  /* box-shadows */
+  --box-shadow-small: 0 2px 8px rgba(0, 0, 0, 10%);
+  --box-shadow-medium: 2px 4px 8px rgba(0, 0, 0, 8%),
+    2px 8px 16px rgba(0, 0, 0, 16%);
+  --box-shadow-large: 4px 8px 16px rgba(0, 0, 0, 8%),
+    2px 8px 16px rgba(0, 0, 0, 16%);
+
+  /* animation speeds */
+  --animation-duration-s: 200ms;
+  --animation-duration-l: 300ms;
+  --animation-duration-xl: 1.2s;
+
+  /* z indices */
+  --z-index-xxs: -10;
+  --z-index-xs: 0;
+  --z-index-s: 10;
+  --z-index-m: 20;
+  --z-index-l: 30;
+
+  /* header heights */
+  --header-height-mobile: 56px;
+  --header-height-tablet: 80px;
+  --header-height-desktop: 80px;
+  --main-nav-bar-height-mobile: 72px;
+  --main-nav-bar-height-tablet: 66px;
+  --main-nav-bar-height-desktop: 72px;
+
+  /* finanztip grid */
+  --grid-size-s-tablet: 570px;
+  --grid-size-s: 738px;
+  --grid-size-m: 930px;
+  --grid-size-l: 1120px;
+}
+
+/* custom breakpoints */
+$break-xxs: 375px;
+$break-xs: 520px;
+$break-xs-max: 767px;
+$break-sm: 768px;
+$break-sm-max: 1023px;
+$break-md: 1024px;
+$break-lg: 1280px;

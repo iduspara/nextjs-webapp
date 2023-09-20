@@ -1,0 +1,53 @@
+.intro-box {
+  .factbox,
+  .advicebox {
+    button,
+    .button,
+    .button-download {
+      margin-left: calc(2 * var(--spacing-m));
+    }
+
+    ul li {
+      margin-bottom: var(--spacing-m);
+
+      &::before {
+        height: calc(1em * var(--line-height-tight));
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      button,
+      .button,
+      .button-download {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .advicebox {
+    ul,
+    p {
+      margin-bottom: var(--spacing-m);
+    }
+
+    .rte {
+      margin-bottom: var(--spacing-m);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      p:last-child {
+        margin-top: var(--spacing-xl);
+      }
+
+      &.list-following {
+        p:last-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

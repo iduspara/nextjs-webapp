@@ -1,0 +1,231 @@
+/* stylelint-disable no-descending-specificity */
+.custom-checkbox-radio {
+  font-family: var(--font-family-inter);
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-xxs) 0;
+  margin-bottom: var(--spacing-xxs);
+
+  &.radio-align-top {
+    align-items: flex-start;
+
+    input[type="radio"] {
+      margin-top: 2px;
+    }
+  }
+
+  &.bullet-group {
+    $bulletSize: 48px;
+
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: $bulletSize;
+
+    label {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      line-height: $bulletSize;
+      font-weight: 400;
+      font-size: var(--font-size-xs);
+      color: var(--color-slate);
+      z-index: 1;
+    }
+
+    input[type="radio"] ~ span[class$="-span"],
+    .button-icon {
+      &::before {
+        content: none;
+      }
+    }
+
+    span.bullet-span {
+      display: block;
+      position: absolute;
+      border-radius: 100%;
+      pointer-events: none;
+      width: $bulletSize;
+      height: $bulletSize;
+      top: 0;
+      left: 0;
+      transition:
+        background-color var(--animation-duration-l),
+        border var(--animation-duration-s);
+      background-color: var(--color-white);
+      border: 1px solid var(--color-grey);
+    }
+
+    .button-icon {
+      width: $bulletSize;
+      height: $bulletSize;
+      margin: 0;
+      display: block;
+      appearance: none;
+      background: transparent;
+
+      &:hover {
+        & ~ span.bullet-span {
+          border: 1px solid var(--color-slate);
+        }
+      }
+
+      &:checked {
+        & ~ span.bullet-span {
+          background-color: var(--color-slate);
+          border-color: var(--color-slate);
+        }
+
+        & + label {
+          color: var(--color-white);
+        }
+      }
+
+      &:focus {
+        & ~ span.bullet-span {
+          border-color: var(--color-indigo);
+          border-width: 2px;
+        }
+      }
+
+      & + label {
+        color: var(--color-slate);
+        transition: color var(--animation-duration-l);
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  label {
+    font-size: var(--font-size-xs);
+    line-height: var(--spacing-m);
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin: 0 var(--spacing-s) 0 0;
+    flex-shrink: 0;
+
+    &:checked {
+      ~ span[class$="-span"]::before {
+        border-color: var(--color-slate);
+      }
+    }
+
+    &:hover {
+      ~ span[class$="-span"]::before {
+        border-color: var(--color-slate);
+      }
+    }
+
+    &:disabled {
+      &:hover {
+        ~ span[class$="-span"]::before {
+          border-color: var(--color-grey);
+        }
+      }
+
+      + label {
+        color: var(--color-grey);
+      }
+    }
+
+    &:focus {
+      outline: none;
+
+      ~ span[class$="-span"]::before {
+        border-color: var(--color-indigo);
+        border-width: 2px;
+      }
+    }
+
+    ~ span[class$="-span"]::before {
+      content: "";
+      background-color: var(--color-white);
+      border: 1px solid var(--color-grey);
+      position: absolute;
+      top: var(--spacing-xxs);
+      left: 0;
+      pointer-events: none;
+    }
+
+    ~ span[class$="-span"]::after {
+      content: "";
+      background-color: var(--color-white);
+      pointer-events: none;
+    }
+  }
+
+  input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    align-self: self-start;
+    margin-top: 2px;
+
+    ~ span.radio-span::before {
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      top: 10px;
+    }
+
+    ~ span.radio-span::after {
+      width: 12px;
+      height: 12px;
+      border-radius: 100%;
+      position: absolute;
+      top: 14px;
+      left: 4px;
+      transition: background-color 0.4s;
+    }
+
+    &:checked ~ span.radio-span {
+      &::after {
+        background-color: var(--color-slate);
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+
+    ~ span.checkbox-span::before {
+      width: 24px;
+      height: 24px;
+    }
+
+    ~ span.checkbox-span::after {
+      content: "✓";
+      text-align: center;
+      line-height: 20px;
+      font-weight: bold;
+      font-size: 16px;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 20px;
+      left: 2px;
+      transform: translateY(-50%);
+      color: var(--color-white);
+      transition: color 0.4s;
+    }
+
+    &:checked ~ span.checkbox-span {
+      &::after {
+        color: var(--color-slate);
+      }
+    }
+  }
+}

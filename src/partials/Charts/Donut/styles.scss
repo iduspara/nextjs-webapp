@@ -1,0 +1,32 @@
+.donut-chart {
+  font-family: var(--font-family-inter);
+  text-align: center;
+
+  svg {
+    display: block;
+    width: 90px;
+    height: 90px;
+
+    @media (min-width: $break-sm) {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  .review-count {
+    font-size: 0.5rem;
+    font-weight: bold;
+    fill: var(--color-slate);
+  }
+
+  .text-link {
+    display: inline-block;
+    font-size: var(--font-size-xxs);
+    line-height: var(--line-height-tight);
+    margin-top: var(--spacing-m);
+
+    @media (min-width: $break-sm) {
+      font-size: var(--font-size-s);
+    }
+  }
+}

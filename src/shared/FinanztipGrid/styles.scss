@@ -1,0 +1,41 @@
+$grid-size-breakpoint-s: 818px; /* calc(var(--grid-size-s) + var(--spacing-xl) * 2) */
+$grid-size-breakpoint-m: 1010px; /* calc(var(--grid-size-m) + var(--spacing-xl) * 2) */
+$grid-size-breakpoint-l: 1200px; /* calc(var(--grid-size-l) + var(--spacing-xl) * 2) */
+
+.finanztip-grid {
+  margin: 0 var(--spacing-m);
+
+  @media (min-width: $break-sm) {
+    margin: 0 var(--spacing-xl);
+  }
+
+  &.grid-size-s {
+    @media (min-width: $break-sm) {
+      max-width: var(--grid-size-s);
+    }
+
+    @media (min-width: $grid-size-breakpoint-s) {
+      margin: 0 auto;
+    }
+  }
+
+  &.grid-size-m {
+    @media (min-width: $break-sm) {
+      max-width: var(--grid-size-m);
+    }
+
+    @media (min-width: $grid-size-breakpoint-m) {
+      margin: 0 auto;
+    }
+  }
+
+  &.grid-size-l {
+    @media (min-width: $break-sm) {
+      max-width: var(--grid-size-l);
+    }
+
+    @media (min-width: $grid-size-breakpoint-l) {
+      margin: 0 auto;
+    }
+  }
+}

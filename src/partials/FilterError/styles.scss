@@ -1,0 +1,14 @@
+.filter-error {
+  font-family: var(--font-family-inter);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  p {
+    padding: var(--spacing-xl) var(--spacing-m) 0 var(--spacing-m);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    line-height: var(--line-height-xs);
+    text-align: center;
+  }
+}

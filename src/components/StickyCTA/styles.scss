@@ -1,0 +1,53 @@
+/* stylelint-disable color-function-notation */
+/* stylelint-disable alpha-value-notation */
+.sticky-cta {
+  font-family: var(--font-family-inter);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: var(--spacing-xs) var(--spacing-m);
+  background-color: var(--color-white);
+  box-shadow: -2px -4px 8px rgba(0, 0, 0, 0.08),
+    -2px -8px 16px rgba(0, 0, 0, 0.24);
+
+  @media (min-width: $break-sm) {
+    padding: var(--spacing-xs) var(--spacing-xl);
+  }
+
+  .cta-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-s);
+
+    @media (min-width: $break-sm) {
+      justify-content: space-between;
+    }
+  }
+
+  .cta-image {
+    display: none;
+
+    @media (min-width: $break-sm) {
+      display: flex;
+      align-items: center;
+      width: 160px;
+      height: 50px;
+
+      img {
+        display: block;
+        max-height: 100%;
+      }
+    }
+  }
+
+  .cta-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-s);
+    flex-wrap: wrap;
+  }
+}

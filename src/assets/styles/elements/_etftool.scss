@@ -1,0 +1,277 @@
+/* stylelint-disable no-descending-specificity */
+/* stylelint-disable selector-class-pattern */
+.ft-calculators {
+  .etf-tool {
+    a {
+      border-bottom: none;
+    }
+
+    img {
+      margin-bottom: 0;
+    }
+
+    span {
+      font-size: var(--font-size-xxs);
+
+      @media (min-width: $break-sm) {
+        font-size: var(--font-size-xs);
+      }
+    }
+
+    .result-container {
+      overflow-y: inherit;
+    }
+
+    .pros-cons-submit .h5 {
+      line-height: var(--line-height-title);
+    }
+
+    .vendor-not-found {
+      font-weight: 700;
+      line-height: var(--line-height-xxs);
+      font-size: var(--font-size-xxs) !important;
+    }
+
+    .recommended-etf {
+      display: flex;
+      align-items: center;
+
+      .icon-question {
+        align-self: flex-start;
+        margin: 0;
+        min-width: 24px;
+      }
+    }
+
+    .etf-tool__results {
+      .background-color-mint {
+        margin-left: -24px !important;
+        margin-right: -24px !important;
+        padding-left: var(--spacing-m);
+        padding-right: var(--spacing-m);
+
+        @media (min-width: $break-sm) {
+          margin-left: -40px !important;
+          margin-right: -40px !important;
+        }
+
+        .pro-mark {
+          font-size: var(--font-size-xxs) !important;
+
+          @media (min-width: $break-sm) {
+            font-size: var(--font-size-xs) !important;
+          }
+        }
+
+        .pro-mark:last-child {
+          @media (min-width: $break-sm) {
+            margin-bottom: var(--spacing-xl) !important;
+          }
+        }
+      }
+
+      .etf-logo {
+        margin-bottom: var(--spacing-xxs) !important;
+      }
+
+      .etf-logo a,
+      .etf-logo img {
+        display: block;
+      }
+
+      .result-item-details {
+        .recommendation-box {
+          overflow: visible;
+        }
+      }
+
+      .details {
+        gap: 0;
+
+        @media (min-width: $break-md) {
+          gap: 0 40px;
+        }
+
+        .other-infos {
+          display: block;
+
+          @media (min-width: $break-md) {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
+
+        > div {
+          display: flex;
+          flex-direction: column;
+          gap: var(--spacing-m);
+
+          @media (min-width: $break-md) {
+            width: 50%;
+          }
+        }
+
+        p,
+        span {
+          font-size: var(--font-size-xxs);
+          line-height: var(--line-height-xxs);
+
+          @media (min-width: $break-sm) {
+            font-size: var(--font-size-xs);
+            line-height: var(--line-height-tight);
+          }
+        }
+
+        p {
+          margin-bottom: var(--spacing-s);
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+
+        @media (min-width: $break-md) {
+          > div {
+            width: 100%;
+          }
+
+          .pros-cons-submit div:first-child {
+            align-self: baseline;
+          }
+        }
+      }
+
+      .result-item-provider-detail-section {
+        @media (min-width: $break-md) {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+
+          .h5 {
+            max-width: 254px;
+          }
+
+          .result-item-actions {
+            flex-direction: column;
+            gap: var(--spacing-xl);
+          }
+        }
+      }
+    }
+
+    .etf-tool__result--matrix-view {
+      th,
+      td {
+        max-width: 99px;
+        min-width: 99px;
+      }
+
+      td.provider-info {
+        vertical-align: top;
+      }
+
+      td.provider-rating {
+        text-align: center;
+        vertical-align: middle;
+      }
+
+
+      .provider-logo {
+        max-width: 120px;
+      }
+
+      .etf-tool__results-matrix {
+        display: none;
+      }
+
+      .etf-tool__results-list {
+        display: block;
+      }
+
+      @media (min-width: $break-sm) {
+        .etf-tool__results-matrix {
+          display: block;
+        }
+
+        .etf-tool__results-list {
+          display: none;
+        }
+      }
+    }
+
+    .etf-tool__results-matrix {
+      display: none;
+    }
+
+    .etf-tool__results-list {
+      display: block;
+    }
+
+    .provider-ident {
+      min-width: 203px !important;
+      max-width: 203px !important;
+
+      div.static-column > div {
+        margin-bottom: var(--spacing-xxs);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      div.font-bold {
+        @media (min-width: $break-sm) {
+          font-size: var(--font-size-xxxs) !important;
+          line-height: 16px;
+        }
+      }
+    }
+
+    .h5 {
+      font-family: var(--font-family-inter);
+      margin-bottom: var(--spacing-m);
+    }
+
+    .checkbox-radio-group {
+      padding: 0;
+      margin-bottom: var(--spacing-m);
+    }
+
+    .recommendation-box {
+      ul.first-list > li:last-child {
+        margin-bottom: var(--spacing-s) !important;
+      }
+    }
+
+    .result-links {
+      @media (min-width: $break-md) {
+        gap: 0;
+
+        .font-bold {
+          font-size: var(--font-size-xxs) !important;
+          line-height: var(--line-height-xxs) !important;
+        }
+      }
+    }
+
+    .broker-result-logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      .broker-result-logo {
+        margin-bottom: var(--spacing-m);
+      }
+
+      @media (min-width: $break-sm) {
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+
+        .broker-result-logo {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

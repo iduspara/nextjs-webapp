@@ -1,0 +1,422 @@
+/* stylelint-disable color-function-notation */
+.twingle-floating-element {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 9000009;
+  box-shadow: 1px 6px 13px #d8d8d8;
+  border-radius: 30px 40px 40px 0;
+
+  display: none;
+  background-color: var(--color-white);
+
+  @media (min-width: $break-md) {
+    display: block;
+    width: 205px;
+    left: auto;
+    transition: all 0.7s ease;
+    transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  }
+
+  .btn-twingle {
+    padding-left: var(--spacing-l);
+    padding-right: var(--spacing-l);
+    width: 100%;
+    height: 56px;
+    background-color: var(--color-orange);
+    border-radius: 30px 40px 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background-color: var(--color-orange);
+    }
+
+    &:focus {
+      background-color: var(--color-orange);
+    }
+
+    @media (min-width: $break-md) {
+      &:hover {
+        background-color: var(--color-orange-light);
+      }
+    }
+  }
+
+  .twingle-content {
+    display: none;
+    color: #000;
+    background: var(--color-white);
+    border-radius: 0 0 30px;
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxs);
+    line-height: var(--line-height-xxs);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .twingle-content-message,
+  .twingle-content-mask {
+    display: none;
+    margin: var(--spacing-xs) var(--spacing-m);
+  }
+
+  .twingle-content-message {
+    cursor: pointer;
+  }
+
+  .twingle-content-mask {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  .js-scroll {
+    height: var(--spacing-l);
+    flex-shrink: 0;
+    position: relative;
+
+    &:first-child,
+    &:last-child {
+      &::after {
+        position: absolute;
+        bottom: -43px;
+        left: 0;
+        z-index: 10;
+        display: block;
+        width: 100%;
+        height: 43px;
+        content: '';
+        pointer-events: none;
+        background: linear-gradient(
+          180deg,
+          var(--color-white) 20%,
+          rgba(255, 255, 255, 0%) 100%
+        );
+        opacity: 0;
+        transition: opacity var(--animation-duration-l);
+      }
+    }
+
+    &:last-child {
+      &::after {
+        bottom: auto;
+        top: -43px;
+        background: linear-gradient(
+          360deg,
+          var(--color-white) 20%,
+          rgba(255, 255, 255, 0%) 100%
+        );
+      }
+    }
+
+    &.scroll-top,
+    &.scroll-bottom {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .twingle-content-body {
+    flex-grow: 1;
+    max-height: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    transition: all 1s ease;
+    transition-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  .intro-message {
+    padding: 0 var(--spacing-m) 0 var(--spacing-m);
+
+    @media (min-width: $break-md) {
+      padding: 0 var(--spacing-l) 0 var(--spacing-l);
+    }
+  }
+
+  .main-icon {
+    margin-right: 10px;
+  }
+
+  .btn-chevron-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0;
+    background-color: transparent;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 1px;
+      height: 8px;
+      background-color: var(--color-white);
+      border-radius: 2px;
+    }
+
+    &::before {
+      transform: translateX(-2px) rotate(315deg);
+    }
+
+    &::after {
+      transform: translateX(3px) rotate(45deg);
+    }
+  }
+
+  &.state-1,
+  &.state-2 {
+    .btn-twingle {
+      border-radius: 30px 30px 0 0;
+      justify-content: flex-start;
+    }
+
+    .twingle-content {
+      display: block;
+    }
+  }
+
+  &.state-1 {
+    border-radius: 30px 40px 40px 0;
+    display: block;
+
+    @media (min-width: $break-md) {
+      width: 930px;
+      display: flex;
+
+      .btn-twingle {
+        width: 207px;
+        border-radius: 30px 40px 40px 0;
+        justify-content: flex-start;
+      }
+
+      .btn-chevron-close {
+        background-color: var(--color-orange);
+        border-radius: 50%;
+
+        &:hover {
+          background-color: #ff9575;
+        }
+
+        &::before {
+          transform: translateY(-2px) rotate(43deg);
+        }
+
+        &::after {
+          transform: translateY(4px) rotate(130deg);
+        }
+      }
+
+      .twingle-content {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+      }
+    }
+
+    .twingle-content-message {
+      display: block;
+    }
+  }
+
+  &.state-2 {
+    display: block;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: none;
+    border-radius: 0;
+    border: 0;
+
+    .twingle-content {
+      height: 80vh;
+    }
+
+    @media (min-width: $break-md) {
+      width: 740px;
+      max-height: calc(100vh - 240px);
+      left: 50%;
+      top: auto;
+      right: auto;
+      bottom: 50%;
+      transform: translate(-50%, 50%);
+      box-shadow: 1px 6px 13px #d8d8d8;
+      border-radius: 30px;
+      overflow: hidden;
+      transition: none !important;
+      animation-name: shake;
+      animation-duration: 1s;
+      animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+
+      .twingle-content {
+        height: 615px;
+      }
+    }
+
+    .btn-twingle {
+      cursor: auto;
+    }
+
+    .twingle-content {
+      white-space: normal;
+    }
+
+    .twingle-content-body {
+      max-height: calc(100vh - (56px + 56px));
+    }
+
+    .twingle-content-mask {
+      display: flex;
+    }
+  }
+
+  &.state-1,
+  &.state-2,
+  &.animation-state-move-left {
+    .btn-chevron-close {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &.animation-state-move-left {
+    animation: move-left 0.8s forwards;
+
+    .btn-twingle {
+      border-radius: 30px 30px 0 0;
+      justify-content: flex-start;
+      transition: all 0.8s ease;
+    }
+  }
+
+  &.animation-state-expand {
+    @media (min-width: $break-md) {
+      width: 740px;
+      left: 50%;
+      right: auto;
+      transform: translateX(-50%);
+      transition-property: none;
+      background-color: transparent;
+    }
+
+    .btn-twingle {
+      animation: expand 0.4s forwards;
+    }
+
+    .btn-chevron-close {
+      animation: rotation 0.4s forwards;
+    }
+
+    .twingle-content {
+      display: none;
+    }
+  }
+
+  &.state-2,
+  &.animation-state-move-left,
+  &.animation-state-expand {
+    .btn-chevron-close {
+      &::before,
+      &::after {
+        width: 1px;
+        height: 18px;
+      }
+
+      &::before {
+        transform: translateX(0) rotate(315deg);
+      }
+
+      &::after {
+        transform: translateX(0) rotate(45deg);
+      }
+    }
+  }
+
+  @keyframes shake {
+    0% {
+      bottom: 0%;
+    }
+
+    70% {
+      bottom: 52%;
+    }
+
+    80% {
+      bottom: 48%;
+    }
+
+    90% {
+      bottom: 51%;
+    }
+
+    100% {
+      bottom: 50%;
+    }
+  }
+
+  @keyframes move-left {
+    0% {
+      right: 0;
+      transform: translateX(0);
+      width: 205px;
+    }
+
+    80% {
+      right: 50%;
+      transform: translateX(50%);
+      width: 740px;
+    }
+
+    100% {
+      right: 50%;
+      transform: translateX(50%);
+      width: 740px;
+    }
+  }
+
+  @keyframes expand {
+    0% {
+      width: 207px;
+    }
+
+    100% {
+      width: 100%;
+    }
+  }
+
+  @keyframes rotation {
+    from {
+      transform: rotate(0);
+      right: -200px;
+    }
+
+    to {
+      transform: rotate(359deg);
+      right: 0;
+      background-color: transparent;
+    }
+  }
+}

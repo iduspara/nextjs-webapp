@@ -1,0 +1,66 @@
+.ft-inline-newsletter {
+  table {
+    font-size: inherit;
+    line-height: inherit;
+    border-collapse: inherit;
+
+    tr,
+    th,
+    td {
+      line-height: 0;
+      vertical-align: middle;
+    }
+
+    th {
+      font-size: inherit;
+      font-weight: inherit;
+      text-align: inherit;
+      line-height: inherit;
+      background-color: inherit;
+    }
+
+    tr th,
+    tr td {
+      border: 0;
+      padding: inherit;
+      min-width: initial;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    tbody tr:nth-child(odd) td {
+      background-color: initial;
+    }
+
+    thead + tbody tr:nth-child(even) td {
+      background-color: initial;
+    }
+
+    thead + tbody tr:nth-child(odd) td {
+      background-color: initial;
+    }
+
+    thead + tbody tr:nth-child(even) th ~ td {
+      background-color: initial;
+    }
+  }
+
+  img {
+    margin: 0 !important;
+  }
+
+  a {
+    color: var(--color-slate);
+    border: 0 !important;
+  }
+
+  div > table > tbody > tr > td > table {
+    margin: 0 auto;
+  }
+
+  p {
+    line-height: 29px;
+  }
+}

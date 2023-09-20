@@ -1,0 +1,15 @@
+.provider-circle-rating {
+  font-family: var(--font-family-inter);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--spacing-l);
+
+  @media (min-width: $break-sm) {
+    gap: var(--spacing-xxxxl);
+  }
+
+  @media (min-width: $break-md) {
+    gap: var(--spacing-xxxxxl);
+  }
+}

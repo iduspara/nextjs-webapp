@@ -1,0 +1,75 @@
+/* stylelint-disable no-descending-specificity */
+.ft-ressort,
+.ft-category {
+  font-size: var(--font-size-guidebook-phone);
+
+  @media (min-width: $break-sm) {
+    font-size: var(--font-size-m);
+  }
+
+  .ft-ressort-content,
+  .ft-category-content {
+    h3,
+    .h3 {
+      font-size: var(--font-size-l);
+
+      @media (min-width: $break-sm) {
+        font-size: var(--font-size-xl);
+      }
+    }
+
+    .ftdefaultcontentelement {
+      margin-bottom: var(--spacing-m);
+
+      @media (min-width: $break-sm) {
+        margin-bottom: var(--spacing-xl);
+      }
+    }
+  }
+
+  .header-contentelement-container {
+    margin-top: var(--spacing-xl);
+
+    @media (min-width: $break-sm) {
+      margin-top: var(--spacing-xxxl);
+    }
+
+    .header-contentelement {
+      display: flex;
+
+      @media (min-width: $break-sm) {
+        font-size: var(--font-size-xl);
+      }
+
+      .header-prefix-number {
+        width: 32px;
+        text-align: center;
+        margin-right: var(--spacing-s);
+        flex-shrink: 0;
+
+        @media (min-width: $break-sm) {
+          width: calc(100% / 12 - 24px);
+          margin-right: var(--spacing-m);
+        }
+
+        @media (min-width: $break-md) {
+          width: calc(100% / 9 - 24px);
+          margin-right: var(--spacing-m);
+        }
+      }
+    }
+  }
+
+  .ft-ressort-intro.hero-image-banner,
+  .ft-category-intro.hero-image-banner {
+    background-color: var(--color-skyblue);
+
+    & h2 {
+      font-family: var(--font-family-inter);
+    }
+  }
+
+  .header-contentelement {
+    font-size: var(--font-size-l);
+  }
+}

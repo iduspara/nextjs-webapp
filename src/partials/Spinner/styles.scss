@@ -1,0 +1,30 @@
+.spinner {
+  font-family: var(--font-family-inter);
+  display: block;
+  border: 3px solid var(--color-lightgrey);
+  border-radius: 50%;
+  border-top-color: var(--color-orange);
+  animation: spin 1s ease-in-out infinite;
+
+  &.size-s {
+    width: 16px;
+    height: 16px;
+  }
+
+  &.size-m {
+    width: 24px;
+    height: 24px;
+  }
+
+  &.size-l {
+    width: 32px;
+    height: 32px;
+  }
+
+  &.spinner-frame {
+    width: var(--spacing-xxxxxl);
+    height: var(--spacing-xxxxxl);
+    border-width: 9px;
+    border-style: solid;
+  }
+}
